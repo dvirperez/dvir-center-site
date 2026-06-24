@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>יוצרים ניצחונות בקיץ | דביר פרץ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dvir-teal: #3e99a7;
+      --dvir-teal-dark: #2d7a87;
+      --dvir-teal-light: #e8f4f6;
+      --dvir-black: #0f0f0f;
+      --dvir-white: #ffffff;
+      --dvir-gray-light: #f4f8f9;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Assistant', sans-serif;
+      background: var(--dvir-white);
+      color: var(--dvir-black);
+      direction: rtl;
+      text-align: right;
+    }
+
+    /* ===== SHARED LAYOUT ===== */
+    .dvir-s-section {
+      padding: 4rem 1.25rem;
+    }
+
+    .dvir-s-section--dark {
+      background: var(--dvir-black);
+      color: var(--dvir-white);
+    }
+
+    .dvir-s-section--soft {
+      background: var(--dvir-gray-light);
+    }
+
+    .dvir-s-wrap {
+      width: 100%;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .dvir-s-kicker {
+      display: block;
+      margin-bottom: 0.65rem;
+      color: var(--dvir-teal-dark);
+      font-size: 0.95rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .dvir-s-section--dark .dvir-s-kicker {
+      color: var(--dvir-teal-light);
+    }
+
+    .dvir-s-title {
+      font-size: clamp(1.45rem, 4vw, 2.2rem);
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+    }
+
+    .dvir-s-lead {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: #333;
+      max-width: 760px;
+    }
+
+    .dvir-s-section--dark .dvir-s-lead {
+      color: rgba(255,255,255,0.82);
+    }
+
+    /* ===== HERO ===== */
+    .dvir-s-hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 0 1.25rem;
+      background: var(--dvir-black);
+    }
+
+    .dvir-s-hero__img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .dvir-s-hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(15,15,15,0.65);
+      z-index: 1;
+    }
+
+    .dvir-s-hero__content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 720px;
+      text-align: center;
+      color: var(--dvir-white);
+    }
+
+    .dvir-s-hero__logo {
+      width: 110px;
+      height: auto;
+      opacity: 0;
+      transform: translateY(-16px);
+      animation: dvir-fadeDown 0.8s ease forwards 0.1s;
+    }
+
+    .dvir-s-hero__headline {
+      font-size: clamp(1.65rem, 5.5vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1.3;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: dvir-fadeUp 0.8s ease forwards 0.3s;
+    }
+
+    .dvir-s-hero__sub {
+      font-size: clamp(1rem, 2.8vw, 1.15rem);
+      font-weight: 400;
+      line-height: 1.65;
+      color: rgba(255,255,255,0.82);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: dvir-fadeUp 0.8s ease forwards 0.5s;
+    }
+
+    .dvir-s-hero__badge {
+      display: inline-block;
+      padding: 0.45rem 1.1rem;
+      background: var(--dvir-teal);
+      color: var(--dvir-white);
+      border-radius: 50px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      opacity: 0;
+      animation: dvir-fadeUp 0.8s ease forwards 0.55s;
+    }
+
+    .dvir-s-hero__ctas {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      width: 100%;
+      max-width: 380px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: dvir-fadeUp 0.8s ease forwards 0.7s;
+    }
+
+    .dvir-s-btn {
+      display: inline-block;
+      width: 100%;
+      padding: 0.9rem 1.5rem;
+      border-radius: 8px;
+      font-family: 'Assistant', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      text-decoration: none;
+      text-align: center;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .dvir-s-btn--primary {
+      background: var(--dvir-teal);
+      color: var(--dvir-white);
+    }
+
+    .dvir-s-btn--primary:hover {
+      background: var(--dvir-teal-dark);
+      transform: translateY(-2px);
+    }
+
+    .dvir-s-btn--outline {
+      background: transparent;
+      color: var(--dvir-white);
+      border: 2px solid rgba(255,255,255,0.7);
+    }
+
+    .dvir-s-btn--outline:hover {
+      background: rgba(255,255,255,0.1);
+      transform: translateY(-2px);
+    }
+
+    @keyframes dvir-fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes dvir-fadeDown {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (min-width: 640px) {
+      .dvir-s-hero__logo { width: 140px; }
+      .dvir-s-hero__ctas {
+        flex-direction: row;
+        max-width: 520px;
+      }
+      .dvir-s-btn { width: auto; min-width: 200px; }
+    }
+
+    /* ===== PROGRAMS ===== */
+    .dvir-s-programs__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .dvir-s-card {
+      background: var(--dvir-white);
+      border-radius: 14px;
+      padding: 2rem 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      box-shadow: 0 2px 16px rgba(62,153,167,0.10);
+      border-top: 4px solid var(--dvir-teal);
+    }
+
+    .dvir-s-card__label {
+      display: inline-block;
+      padding: 0.3rem 0.8rem;
+      background: var(--dvir-teal-light);
+      color: var(--dvir-teal-dark);
+      border-radius: 50px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      align-self: flex-start;
+    }
+
+    .dvir-s-card__title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--dvir-black);
+      line-height: 1.3;
+    }
+
+    .dvir-s-card__meta {
+      display: grid;
+      gap: 0.4rem;
+    }
+
+    .dvir-s-card__meta-row {
+      font-size: 0.97rem;
+      color: #444;
+      line-height: 1.5;
+    }
+
+    .dvir-s-card__meta-row strong {
+      color: var(--dvir-black);
+    }
+
+    .dvir-s-card__price {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--dvir-teal-dark);
+    }
+
+    .dvir-s-card__price-note {
+      font-size: 0.88rem;
+      color: #666;
+      margin-top: 0.2rem;
+    }
+
+    .dvir-s-card__btn {
+      display: inline-block;
+      padding: 0.85rem 1.4rem;
+      background: var(--dvir-teal);
+      color: var(--dvir-white);
+      border-radius: 8px;
+      font-family: 'Assistant', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      text-align: center;
+      transition: background 0.2s, transform 0.15s;
+      width: 100%;
+      margin-top: auto;
+    }
+
+    .dvir-s-card__btn:hover {
+      background: var(--dvir-teal-dark);
+      transform: translateY(-2px);
+    }
+
+    .dvir-s-card__note {
+      font-size: 0.88rem;
+      color: #888;
+      line-height: 1.5;
+    }
+
+    @media (min-width: 640px) {
+      .dvir-s-programs__grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* ===== SYLLABUS ===== */
+    .dvir-s-syllabus__days {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .dvir-s-day {
+      display: flex;
+      gap: 1.1rem;
+      align-items: flex-start;
+      padding: 1.35rem;
+      background: var(--dvir-white);
+      border-radius: 10px;
+      border-right: 4px solid var(--dvir-teal);
+      box-shadow: 0 1px 10px rgba(62,153,167,0.08);
+    }
+
+    .dvir-s-section--dark .dvir-s-day {
+      background: rgba(255,255,255,0.06);
+      border-right-color: var(--dvir-teal);
+    }
+
+    .dvir-s-day__num {
+      flex-shrink: 0;
+      width: 2.4rem;
+      height: 2.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--dvir-teal);
+      color: var(--dvir-white);
+      border-radius: 50%;
+      font-weight: 800;
+      font-size: 1rem;
+    }
+
+    .dvir-s-day__body {}
+
+    .dvir-s-day__title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--dvir-black);
+      margin-bottom: 0.3rem;
+    }
+
+    .dvir-s-section--dark .dvir-s-day__title {
+      color: var(--dvir-white);
+    }
+
+    .dvir-s-day__desc {
+      font-size: 0.97rem;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    .dvir-s-section--dark .dvir-s-day__desc {
+      color: rgba(255,255,255,0.75);
+    }
+
+    @media (min-width: 640px) {
+      .dvir-s-syllabus__days {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* ===== WHY METHOD ===== */
+    .dvir-s-method__points {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+
+    .dvir-s-method__point {
+      padding: 1.4rem;
+      background: var(--dvir-white);
+      border-radius: 10px;
+      border-top: 3px solid var(--dvir-teal);
+      box-shadow: 0 1px 10px rgba(62,153,167,0.08);
+    }
+
+    .dvir-s-method__point-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--dvir-black);
+      margin-bottom: 0.4rem;
+    }
+
+    .dvir-s-method__point-text {
+      font-size: 0.97rem;
+      color: #444;
+      line-height: 1.65;
+    }
+
+    @media (min-width: 640px) {
+      .dvir-s-method__points {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (min-width: 860px) {
+      .dvir-s-method__points {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* ===== ABOUT ===== */
+    .dvir-s-about__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
+      align-items: center;
+      margin-top: 2rem;
+    }
+
+    .dvir-s-about__img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    .dvir-s-about__text {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    @media (min-width: 760px) {
+      .dvir-s-about__grid {
+        grid-template-columns: 0.9fr 1.1fr;
+      }
+    }
+
+    /* ===== TRUST ===== */
+    .dvir-s-trust__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .dvir-s-trust__item {
+      padding: 1.4rem;
+      background: rgba(255,255,255,0.06);
+      border-radius: 10px;
+      border-top: 3px solid var(--dvir-teal);
+    }
+
+    .dvir-s-trust__number {
+      display: block;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--dvir-teal-light);
+      margin-bottom: 0.3rem;
+    }
+
+    .dvir-s-trust__label {
+      font-size: 0.97rem;
+      color: rgba(255,255,255,0.78);
+      line-height: 1.55;
+    }
+
+    @media (min-width: 640px) {
+      .dvir-s-trust__grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* ===== FAQ ===== */
+    .dvir-s-faq__list {
+      display: grid;
+      gap: 0.85rem;
+      margin-top: 2rem;
+    }
+
+    .dvir-s-faq__item {
+      background: var(--dvir-white);
+      border-radius: 8px;
+      border: 1px solid rgba(62,153,167,0.22);
+      overflow: hidden;
+    }
+
+    .dvir-s-faq__question {
+      cursor: pointer;
+      padding: 1rem 1.15rem;
+      color: var(--dvir-black);
+      font-weight: 800;
+      line-height: 1.4;
+    }
+
+    .dvir-s-faq__answer {
+      padding: 0 1.15rem 1.15rem;
+      color: #333;
+      font-size: 0.98rem;
+      line-height: 1.65;
+    }
+
+    /* ===== CTA ===== */
+    .dvir-s-cta {
+      text-align: center;
+    }
+
+    .dvir-s-cta__actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      width: 100%;
+      max-width: 420px;
+      margin: 2rem auto 0;
+    }
+
+    @media (min-width: 640px) {
+      .dvir-s-cta__actions {
+        flex-direction: row;
+        justify-content: center;
+        max-width: 540px;
+      }
+    }
+
+    /* ===== FLOATING WHATSAPP ===== */
+    .dvir-s-whatsapp-float {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      z-index: 999;
+      width: 56px;
+      height: 56px;
+      background: #25d366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.22);
+      text-decoration: none;
+      transition: transform 0.2s;
+    }
+
+    .dvir-s-whatsapp-float:hover {
+      transform: scale(1.08);
+    }
+
+    .dvir-s-whatsapp-float svg {
+      width: 30px;
+      height: 30px;
+      fill: white;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- summer-01-hero -->
+  <section class="dvir-s-hero" id="summer-01-hero">
+    <img
+      class="dvir-s-hero__img"
+      src="../תמונות מרכז מעובדות ומוכנות לפרסום/ChatGPT Image Jun 23, 2026, 03_33_29 PM.png"
+      alt="ילדים בתרגיל קבוצתי"
+    >
+    <div class="dvir-s-hero__overlay"></div>
+    <div class="dvir-s-hero__content">
+      <img
+        class="dvir-s-hero__logo"
+        src="https://winschool.w-in.co.il/wp-content/uploads/2026/06/Dvir-logo-BW.png"
+        alt="דביר פרץ לוגו"
+      >
+      <span class="dvir-s-hero__badge">קיץ 2026 | רמת גן | עד 12 ילדים בקבוצה</span>
+      <h1 class="dvir-s-hero__headline">יוצרים ניצחונות בקיץ</h1>
+      <p class="dvir-s-hero__sub">
+        שבוע אימון חווייתי לילדים בכיתות ד–ו.<br>
+        ביטחון עצמי, נוכחות, הצגה עצמית ועבודה מול קבוצה — דרך משחק, במה ושיקוף בזמן אמת.
+      </p>
+      <div class="dvir-s-hero__ctas">
+        <a href="#summer-02-programs" class="dvir-s-btn dvir-s-btn--primary">לפרטים והרשמה</a>
+        <a href="https://wa.me/972507467467?text=שלום%20דביר%2C%20ראיתי%20את%20תוכנית%20הקיץ%20ורוצה%20לשמוע%20פרטים" class="dvir-s-btn dvir-s-btn--outline">שאלה בוואטסאפ</a>
+      </div>
+    </div>
+  </section>
+  <!-- /summer-01-hero -->
+
+  <!-- summer-02-programs -->
+  <section class="dvir-s-section dvir-s-section--soft" id="summer-02-programs">
+    <div class="dvir-s-wrap">
+      <span class="dvir-s-kicker">שני מסלולים לקיץ</span>
+      <h2 class="dvir-s-title">בחרו את המסלול שמתאים לילד שלכם</h2>
+      <p class="dvir-s-lead">כל מסלול עומד בפני עצמו. ארבעה ימים, קבוצה קטנה, תהליך שרואים את התוצאות שלו.</p>
+
+      <div class="dvir-s-programs__grid">
+
+        <div class="dvir-s-card">
+          <span class="dvir-s-card__label">מסלול א</span>
+          <h3 class="dvir-s-card__title">יוצאים חזקים לקיץ</h3>
+          <div class="dvir-s-card__meta">
+            <p class="dvir-s-card__meta-row"><strong>תאריכים:</strong> 26–29 ביולי 2026</p>
+            <p class="dvir-s-card__meta-row"><strong>ימים:</strong> א–ד</p>
+            <p class="dvir-s-card__meta-row"><strong>שעות:</strong> 18:00–19:05</p>
+            <p class="dvir-s-card__meta-row"><strong>קבוצה:</strong> עד 12 ילדים</p>
+            <p class="dvir-s-card__meta-row"><strong>כיתות:</strong> ד–ו</p>
+          </div>
+          <div>
+            <p class="dvir-s-card__price">450 ₪</p>
+            <p class="dvir-s-card__price-note">אפשרות 2 תשלומים ללא ריבית</p>
+          </div>
+          <a
+            href="https://wa.me/972507467467?text=שלום%20דביר%2C%20אני%20רוצה%20להירשם%20למסלול%20א%20יוצאים%20חזקים%20לקיץ"
+            class="dvir-s-card__btn"
+          >להרשמה למסלול א</a>
+        </div>
+
+        <div class="dvir-s-card">
+          <span class="dvir-s-card__label">מסלול ב</span>
+          <h3 class="dvir-s-card__title">פותחים את השנה בניצחון</h3>
+          <div class="dvir-s-card__meta">
+            <p class="dvir-s-card__meta-row"><strong>תאריכים:</strong> 2–5 באוגוסט 2026</p>
+            <p class="dvir-s-card__meta-row"><strong>ימים:</strong> א–ד</p>
+            <p class="dvir-s-card__meta-row"><strong>שעות:</strong> 18:00–19:05</p>
+            <p class="dvir-s-card__meta-row"><strong>קבוצה:</strong> עד 12 ילדים</p>
+            <p class="dvir-s-card__meta-row"><strong>כיתות:</strong> ד–ו</p>
+          </div>
+          <div>
+            <p class="dvir-s-card__price">600 ₪</p>
+            <p class="dvir-s-card__price-note">אפשרות 2 תשלומים ללא ריבית</p>
+          </div>
+          <a
+            href="https://wa.me/972507467467?text=שלום%20דביר%2C%20אני%20רוצה%20לשמוע%20על%20מסלול%20ב%20פותחים%20את%20השנה%20בניצחון"
+            class="dvir-s-card__btn"
+          >לפרטים על מסלול ב</a>
+          <p class="dvir-s-card__note">מסלול ב פתוח בעיקר למשתתפי מסלול א. ילדים חדשים — אחרי שיחת התאמה קצרה.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- /summer-02-programs -->
+
+  <!-- summer-03-syllabus-a -->
+  <section class="dvir-s-section" id="summer-03-syllabus-a">
+    <div class="dvir-s-wrap">
+      <span class="dvir-s-kicker">מסלול א | יוצאים חזקים לקיץ</span>
+      <h2 class="dvir-s-title">מה קורה בכל יום?</h2>
+      <p class="dvir-s-lead">ארבעה ימים. כל יום 65 דקות. כל מפגש בנוי על חוויה אחת שמתחברת לחיים.</p>
+      <div class="dvir-s-syllabus__days">
+        <div class="dvir-s-day">
+          <div class="dvir-s-day__num">1</div>
+          <div class="dvir-s-day__body">
+            <p class="dvir-s-day__title">נוכחות ושפת גוף</p>
+            <p class="dvir-s-day__desc">איך נראים כשנכנסים לחדר. מה שפת הגוף מספרת לפני שנפתח הפה. תרגילי מראה ותנועה בתוך הקבוצה.</p>
+          </div>
+        </div>
+        <div class="dvir-s-day">
+          <div class="dvir-s-day__num">2</div>
+          <div class="dvir-s-day__body">
+            <p class="dvir-s-day__title">קול והצגה עצמית</p>
+            <p class="dvir-s-day__desc">איך מדברים מול קבוצה בלי להיבלע. תרגיל הצגה עצמית בסגנון WIN — קצר, חד, אמיתי.</p>
+          </div>
+        </div>
+        <div class="dvir-s-day">
+          <div class="dvir-s-day__num">3</div>
+          <div class="dvir-s-day__body">
+            <p class="dvir-s-day__title">עבודת צוות ומנהיגות</p>
+            <p class="dvir-s-day__desc">משימות שדורשות שיתוף פעולה, הנהגה מתחלפת ושיקוף: מה הבאתי לצוות, מה הצוות הביא לי.</p>
+          </div>
+        </div>
+        <div class="dvir-s-day">
+          <div class="dvir-s-day__num">4</div>
+          <div class="dvir-s-day__body">
+            <p class="dvir-s-day__title">ביטחון מול קהל</p>
+            <p class="dvir-s-day__desc">כל אחד עולה למרחב ומציג. לא נאום, לא מצגת — רגע אמיתי מול הקבוצה. עם שיקוף ומחיאות כפיים.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /summer-03-syllabus-a -->
+
+  <!-- summer-04-syllabus-b -->
+  <section class="dvir-s-section dvir-pt-section--dark dvir-s-section--dark" id="summer-04-syllabus-b">
+    <div class="dvir-s-wrap">
+      <span class="dvir-s-kicker">מסלול ב | פותחים את השנה בניצחון</span>
+      <h2 class="dvir-s-title">מה קורה בכל יום?</h2>
+      <p class="dvir-s-lead">ארבעה ימים שמכינים את הילד לשנת הלימודים. הפעם — גם עם מצלמה.</p>
+      <div class="dvir-s-syllabus__days">
+        <div class="dvir-s-day">
+          <div class="dvir-s-day__num">1</div>
+          <div class="dvir-s-day__body">
+            <p class="dvir-s-day__title">מול המצלמה בפעם הראשונה</p>
+            <p class="dvir-s-day__desc">מה קורה לגוף כשרואים את עצמנו מוקלטים. תרגיל קצר, שיקוף, ודיון על מה שעובד.</p>
+          </div>
+        </div>
+        <div class="dvir-s-day">
+          <div class="dvir-s-day__num">2</div>
+          <div class="dvir-s-day__body">
+            <p class="dvir-s-day__title">הסיפור האישי שלי</p>
+            <p class="dvir-s-day__desc">כל אחד מגבש מסר אחד שרוצה להעביר. לא מה שנשמע טוב — מה שאמיתי. נבנה את הבסיס לסרטון.</p>
+          </div>
+        </div>
+        <div class="dvir-s-day">
+          <div class="dvir-s-day__num">3</div>
+          <div class="dvir-s-day__body">
+            <p class="dvir-s-day__title">הקבוצה מצלמת את עצמה</p>
+            <p class="dvir-s-day__desc">יוצרים יחד רצף של הקבוצה. לא סרטון של כל אחד — סרטון שבו הקבוצה היא הגיבורה.</p>
+          </div>
+        </div>
+        <div class="dvir-s-day">
+          <div class="dvir-s-day__num">4</div>
+          <div class="dvir-s-day__body">
+            <p class="dvir-s-day__title">הצגת הסרטון הקבוצתי</p>
+            <p class="dvir-s-day__desc">צפייה בסרטון הערוך יחד. שיקוף, מחיאות כפיים, וסיום. הסרטון נשלח להורים תוך 48 שעות.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /summer-04-syllabus-b -->
+
+  <!-- summer-05-why-method -->
+  <section class="dvir-s-section dvir-s-section--soft" id="summer-05-why-method">
+    <div class="dvir-s-wrap">
+      <span class="dvir-s-kicker">למה זה עובד</span>
+      <h2 class="dvir-s-title">לא קייטנה. לא חוג. משהו אחר.</h2>
+      <p class="dvir-s-lead">
+        רוב ילדים לומדים ביטחון עצמי בהרצאות ובדפי עבודה. כאן הם מתרגלים אותו מול קבוצה אמיתית, עם שיקוף בזמן אמת.
+      </p>
+      <div class="dvir-s-method__points">
+        <div class="dvir-s-method__point">
+          <p class="dvir-s-method__point-title">קבוצה קטנה — עד 12 ילדים</p>
+          <p class="dvir-s-method__point-text">כל ילד מקבל מקום, זמן ושיקוף אמיתי. זה לא אפשרי בקבוצה גדולה.</p>
+        </div>
+        <div class="dvir-s-method__point">
+          <p class="dvir-s-method__point-title">חוויה לפני הסבר</p>
+          <p class="dvir-s-method__point-text">הילד קודם עושה, אחר כך מבין. לא מקבל הרצאה על ביטחון עצמי — מתרגל אותו.</p>
+        </div>
+        <div class="dvir-s-method__point">
+          <p class="dvir-s-method__point-title">שיקוף שבונה — לא שיקוף שפוגע</p>
+          <p class="dvir-s-method__point-text">הקבוצה מחזירה פידבק ברור ומכבד. הילד יוצא עם ידע מדויק על עצמו.</p>
+        </div>
+        <div class="dvir-s-method__point">
+          <p class="dvir-s-method__point-title">מה שנלמד — ניתן לשימוש מחר</p>
+          <p class="dvir-s-method__point-text">בראיון לחוג, בדיון בכיתה, בשיחה עם חבר. לא מיומנויות תיאורטיות.</p>
+        </div>
+        <div class="dvir-s-method__point">
+          <p class="dvir-s-method__point-title">18 שנות ניסיון בשטח</p>
+          <p class="dvir-s-method__point-text">דביר עבד עם ילדים, בני נוער, הורים וארגונים. המסגרת מותאמת לגיל ולקבוצה.</p>
+        </div>
+        <div class="dvir-s-method__point">
+          <p class="dvir-s-method__point-title">תוצאה שניתן לראות</p>
+          <p class="dvir-s-method__point-text">ביום הרביעי הילד עולה ומציג מול הקבוצה. זה לא הבטחה — זה חלק מהתהליך.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /summer-05-why-method -->
+
+  <!-- summer-06-about -->
+  <section class="dvir-s-section" id="summer-06-about">
+    <div class="dvir-s-wrap">
+      <span class="dvir-s-kicker">מי מעביר את התוכנית</span>
+      <h2 class="dvir-s-title">דביר פרץ — 18 שנה של עבודה עם ילדים</h2>
+      <div class="dvir-s-about__grid">
+        <img
+          class="dvir-s-about__img"
+          src="../תמונות מרכז מעובדות ומוכנות לפרסום/IMG_3782.jpeg"
+          alt="דביר פרץ בעבודה קבוצתית"
+          loading="lazy"
+        >
+        <div class="dvir-s-about__text">
+          <p class="dvir-s-lead">
+            דביר פרץ הוא מנטור, מנחה קבוצות, שחקן ומפתח שיטת WIN. 18 שנה הוא עובד עם ילדים, בני נוער, הורים וצוותי חינוך — בבתי ספר, ברשויות ובמרכז שלו ברמת גן.
+          </p>
+          <p class="dvir-s-lead">
+            הוא לא מסביר לילד מה זה ביטחון עצמי. הוא מכניס אותו לחוויה שבה הוא מתרגל אותו, מקבל שיקוף מהקבוצה, ויוצא יודע משהו חדש על עצמו. זאת שיטת WIN.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /summer-06-about -->
+
+  <!-- summer-07-trust -->
+  <section class="dvir-s-section dvir-s-section--dark" id="summer-07-trust">
+    <div class="dvir-s-wrap">
+      <span class="dvir-s-kicker">למה הורים בוחרים בדביר</span>
+      <h2 class="dvir-s-title">ניסיון שאפשר לסמוך עליו</h2>
+      <div class="dvir-s-trust__grid">
+        <div class="dvir-s-trust__item">
+          <span class="dvir-s-trust__number">18+</span>
+          <p class="dvir-s-trust__label">שנות ניסיון בהובלת תהליכים עם ילדים ובני נוער.</p>
+        </div>
+        <div class="dvir-s-trust__item">
+          <span class="dvir-s-trust__number">100+</span>
+          <p class="dvir-s-trust__label">ביקורות ברשתות מהורים, אנשים וארגונים.</p>
+        </div>
+        <div class="dvir-s-trust__item">
+          <span class="dvir-s-trust__number">95/100</span>
+          <p class="dvir-s-trust__label">במדדי איכות, רלוונטיות והשפעה — תהליך הערכה ומדידה עם אנשי חינוך.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /summer-07-trust -->
+
+  <!-- summer-08-faq -->
+  <section class="dvir-s-section dvir-s-section--soft" id="summer-08-faq">
+    <div class="dvir-s-wrap">
+      <span class="dvir-s-kicker">שאלות של הורים</span>
+      <h2 class="dvir-s-title">מה חשוב לדעת לפני שנרשמים</h2>
+      <div class="dvir-s-faq__list">
+        <details class="dvir-s-faq__item" open>
+          <summary class="dvir-s-faq__question">לאיזה גיל התוכנית מתאימה?</summary>
+          <p class="dvir-s-faq__answer">לילדים בכיתות ד–ו. הקבוצה קטנה, עד 12 ילדים, כדי שכל ילד יקבל מקום, זמן ושיקוף אישי.</p>
+        </details>
+        <details class="dvir-s-faq__item">
+          <summary class="dvir-s-faq__question">הילד שלי ביישן — זה מתאים לו?</summary>
+          <p class="dvir-s-faq__answer">דווקא כן. התהליך בנוי בהדרגה, עם גבול ברור ומרחב מכבד. אף ילד לא נדחף — כל אחד נכנס בקצב שלו, והקבוצה הקטנה עוזרת.</p>
+        </details>
+        <details class="dvir-s-faq__item">
+          <summary class="dvir-s-faq__question">מה ההבדל בין מסלול א למסלול ב?</summary>
+          <p class="dvir-s-faq__answer">מסלול א מתמקד בנוכחות, הצגה עצמית וביטחון מול קבוצה. מסלול ב מוסיף עבודה מול מצלמה ויוצר סרטון קבוצתי. מסלול ב פתוח בעיקר למשתתפי א — חדשים אחרי שיחת התאמה.</p>
+        </details>
+        <details class="dvir-s-faq__item">
+          <summary class="dvir-s-faq__question">איפה זה מתקיים ומה השעות?</summary>
+          <p class="dvir-s-faq__answer">במרכז ברמת גן (שלם 3, בית זילברמינץ, קומה 4). ארבעה מפגשים, ימים א–ד, בין 18:00 ל-19:05.</p>
+        </details>
+        <details class="dvir-s-faq__item">
+          <summary class="dvir-s-faq__question">יש אפשרות לתשלומים?</summary>
+          <p class="dvir-s-faq__answer">כן. אפשר לפצל ל-2 תשלומים ללא ריבית בשני המסלולים.</p>
+        </details>
+        <details class="dvir-s-faq__item">
+          <summary class="dvir-s-faq__question">איך נרשמים?</summary>
+          <p class="dvir-s-faq__answer">שולחים הודעת וואטסאפ עם שם הילד והכיתה, ונחזור אליכם עם כל הפרטים וסגירת ההרשמה.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+  <!-- /summer-08-faq -->
+
+  <!-- summer-09-cta -->
+  <section class="dvir-s-section dvir-s-section--dark" id="summer-09-cta">
+    <div class="dvir-s-wrap dvir-s-cta">
+      <span class="dvir-s-kicker">מקומות מוגבלים — עד 12 ילדים בקבוצה</span>
+      <h2 class="dvir-s-title">רוצים לשריין מקום לילד שלכם?</h2>
+      <p class="dvir-s-lead" style="margin: 0 auto;">
+        שלחו הודעה עם שם הילד והכיתה, ונחזור אליכם עם כל הפרטים.
+      </p>
+      <div class="dvir-s-cta__actions">
+        <a
+          class="dvir-s-btn dvir-s-btn--primary"
+          href="https://wa.me/972507467467?text=שלום%20דביר%2C%20אני%20רוצה%20להירשם%20לתוכנית%20הקיץ.%20שם%20הילד%20וכיתה%3A"
+        >להרשמה בוואטסאפ</a>
+        <a class="dvir-s-btn dvir-s-btn--outline" href="tel:+972507467467">יצירת קשר</a>
+      </div>
+    </div>
+  </section>
+  <!-- /summer-09-cta -->
+
+  <!-- כפתור וואטסאפ צף -->
+  <a
+    class="dvir-s-whatsapp-float"
+    href="https://wa.me/972507467467?text=שלום%20דביר%2C%20ראיתי%20את%20תוכנית%20הקיץ%20ורוצה%20לשמוע%20פרטים"
+    aria-label="פנו אלינו בוואטסאפ"
+    target="_blank"
+    rel="noopener"
+  >
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+</body>
+</html>

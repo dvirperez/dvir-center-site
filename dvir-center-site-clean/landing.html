@@ -1,0 +1,1422 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>יוצרים ניצחונות בדרך | מנטורינג קבוצתי ואישי עם דביר פרץ</title>
+  <meta name="description" content="תהליך מנטורינג אישי וקבוצתי בשיטת ווין לחיזוק ביטחון עצמי, שפת גוף, נוכחות, הצגה עצמית, רושם ראשוני ויכולת פעולה לקראת עבודה, לימודים או עשייה.">
+  <meta name="keywords" content="מנטורינג קבוצתי, מנטורינג אישי, ביטחון עצמי, שפת גוף, נוכחות, הצגה עצמית, רושם ראשוני, הכנה לראיון עבודה, חזרה לעבודה, קורות חיים, תקשורת בין אישית, שיטת ווין, דביר פרץ">
+  <link rel="icon" href="https://winschool.w-in.co.il/wp-content/uploads/2026/02/dvir-icon1.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+/* ============================================================
+   VARIABLES & RESET
+   ============================================================ */
+:root {
+  --dvir-font: 'Assistant', sans-serif;
+  --dvir-teal: #3e99a7;
+  --dvir-teal-dark: #2d7a87;
+  --dvir-teal-light: #e8f4f6;
+  --dvir-black: #0f0f0f;
+  --dvir-white: #ffffff;
+  --dvir-gray-light: #f4f8f9;
+  --dvir-radius: 1.2rem;
+  --dvir-radius-sm: 0.75rem;
+  --dvir-shadow-sm: 0 4px 16px rgba(0,0,0,.07);
+  --dvir-shadow: 0 8px 32px rgba(0,0,0,.12);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--dvir-font);
+  color: var(--dvir-black);
+  background: var(--dvir-white);
+  direction: rtl;
+  text-align: right;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+.dvir-pt-section,
+.dvir-pt-container,
+.dvir-pt-proof-card,
+.dvir-pt-response-card,
+.dvir-pt-plan-card,
+.dvir-pt-quote,
+.dvir-pt-form-group,
+.dvir-pt-footer { direction: rtl; }
+
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+
+/* ============================================================
+   NAV
+   ============================================================ */
+.dvir-pt-nav {
+  position: fixed;
+  top: 0; right: 0; left: 0;
+  z-index: 200;
+  padding: .9rem 0;
+  transition: background 0.35s, border-color 0.35s, box-shadow 0.35s;
+}
+.dvir-pt-nav.scrolled {
+  background: rgba(10,10,10,.96);
+  box-shadow: 0 2px 20px rgba(0,0,0,.22);
+}
+.dvir-pt-nav-inner {
+  max-width: 1200px; margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.dvir-pt-nav-logo {
+  display: flex; align-items: center; gap: .8rem;
+}
+.dvir-pt-nav-logo img { height: 38px; width: auto; }
+.dvir-pt-nav-cta a {
+  padding: .32rem .95rem; border-radius: 50px; font-size: .78rem;
+  font-weight: 800; font-family: var(--dvir-font); cursor: pointer;
+  white-space: nowrap; transition: all .3s;
+  background: var(--dvir-teal); color: white;
+  display: inline-block;
+}
+.dvir-pt-nav-cta a:hover { background: var(--dvir-teal-dark); transform: translateY(-1px); }
+
+/* ============================================================
+   HERO — VIDEO
+   ============================================================ */
+.dvir-pt-hero {
+  position: relative; min-height: 100vh;
+  background: #0a0a0a;
+  overflow: hidden;
+  display: flex; align-items: center;
+}
+.dvir-pt-hero-video {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
+  opacity: .38;
+  z-index: 0;
+}
+.dvir-pt-hero-overlay {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(135deg, rgba(15,15,15,.68) 0%, rgba(62,153,167,.28) 100%);
+}
+.dvir-pt-hero-inner {
+  position: relative; z-index: 2; width: 100%;
+  max-width: 1200px; margin: 0 auto;
+  padding: 8rem 1.5rem 4rem;
+}
+.dvir-pt-hero-badge-video {
+  display: inline-flex; align-items: center; gap: .5rem;
+  background: rgba(255,255,255,.11); border: 1px solid rgba(255,255,255,.22);
+  color: rgba(255,255,255,.88); border-radius: 50px;
+  padding: .32rem 1rem; font-size: .82rem; font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+.dvir-pt-hero h1 {
+  font-size: clamp(2.8rem,8vw,5.2rem); font-weight: 900;
+  color: white; line-height: 1.1; margin-bottom: 1.2rem;
+}
+.dvir-pt-hero h1 em { font-style: normal; color: var(--dvir-teal-light); }
+.dvir-pt-hero-sub {
+  font-size: clamp(1.05rem,2.5vw,1.25rem); color: rgba(255,255,255,.82);
+  max-width: 620px; margin-bottom: 1.8rem; line-height: 1.65;
+}
+.dvir-pt-hero-body-short {
+  font-size: 1rem; color: rgba(255,255,255,.65); line-height: 1.82;
+  max-width: 560px; margin-bottom: 2rem;
+}
+.dvir-pt-hero-body-short em { font-style: normal; color: var(--dvir-teal-light); }
+.dvir-pt-hero-cta {
+  display: flex; flex-wrap: wrap; gap: .8rem;
+  margin-bottom: 1.4rem; align-items: center;
+}
+.dvir-pt-hero-micro {
+  font-size: .8rem; color: rgba(255,255,255,.5);
+  display: flex; align-items: center; gap: .4rem;
+}
+.dvir-pt-hero-micro::before {
+  content: ''; width: 5px; height: 5px;
+  border-radius: 50%; background: var(--dvir-teal-light);
+  display: inline-block;
+}
+.dvir-pt-hero-scroll {
+  position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+  color: rgba(255,255,255,.4); text-align: center; z-index: 2;
+}
+.dvir-pt-hero-scroll svg {
+  width: 22px; height: 22px; fill: none;
+  stroke: currentColor; stroke-width: 1.8;
+  animation: dvir-bounce 2.2s infinite;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.dvir-pt-btn-primary {
+  display: inline-flex; align-items: center; gap: .5rem;
+  padding: .95rem 2.1rem; border-radius: 50px;
+  font-weight: 700; font-size: 1rem; font-family: var(--dvir-font); cursor: pointer;
+  white-space: nowrap; text-decoration: none; transition: all .3s;
+  background: var(--dvir-teal); color: white;
+  box-shadow: 0 8px 28px rgba(62,153,167,.42);
+}
+.dvir-pt-btn-primary:hover {
+  background: var(--dvir-teal-dark); transform: translateY(-3px);
+  box-shadow: 0 12px 38px rgba(62,153,167,.52);
+}
+.dvir-pt-btn-outline-teal, .dvir-pt-btn-outline-white {
+  display: inline-flex; align-items: center; gap: .5rem;
+  padding: .9rem 1.8rem; border-radius: 50px;
+  font-weight: 700; font-size: .95rem; font-family: var(--dvir-font); cursor: pointer;
+  white-space: nowrap; text-decoration: none; transition: all .3s;
+}
+.dvir-pt-btn-outline-teal {
+  background: transparent; border: 2px solid var(--dvir-teal); color: var(--dvir-teal);
+}
+.dvir-pt-btn-outline-teal:hover { background: var(--dvir-teal); color: white; }
+.dvir-pt-btn-outline-white {
+  background: transparent; border: 2px solid rgba(255,255,255,.6); color: white;
+}
+.dvir-pt-btn-outline-white:hover { background: rgba(255,255,255,.12); border-color: white; }
+.dvir-pt-btn-outline-teal svg, .dvir-pt-btn-outline-white svg {
+  width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2;
+}
+.dvir-pt-wa-btn {
+  display: inline-flex; align-items: center; gap: .6rem;
+  padding: .9rem 1.8rem; border-radius: 50px;
+  font-weight: 700; font-size: .95rem; font-family: var(--dvir-font); cursor: pointer;
+  background: #25D366; color: white; transition: all .3s;
+  text-decoration: none;
+}
+.dvir-pt-wa-btn:hover { background: #1db954; transform: translateY(-2px); }
+.dvir-pt-wa-btn svg { width: 17px; height: 17px; fill: white; flex-shrink: 0; }
+.dvir-pt-btn-wa-outline {
+  display: inline-flex; align-items: center; gap: .6rem;
+  padding: .9rem 1.8rem; border-radius: 50px;
+  font-weight: 700; font-size: .95rem; cursor: pointer;
+  background: transparent; border: 2px solid #25D366; color: #25D366;
+  text-decoration: none; transition: all .3s;
+}
+.dvir-pt-btn-wa-outline:hover { background: rgba(37,211,102,.12); border-color: #25D366; color: white; }
+
+/* ============================================================
+   SECTIONS
+   ============================================================ */
+.dvir-pt-section { padding: 5rem 0; background: var(--dvir-white); }
+.dvir-pt-section-alt { padding: 5rem 0; background: var(--dvir-gray-light); }
+.dvir-pt-section-teal { padding: 5rem 0; background: var(--dvir-teal); color: white; }
+.dvir-pt-section-dark { padding: 5rem 0; background: #0f0f0f; color: white; }
+.dvir-pt-container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+.dvir-pt-section-header { text-align: center; margin-bottom: 3.5rem; }
+.dvir-pt-h2 {
+  font-size: clamp(1.45rem,4vw,2.1rem); font-weight: 900;
+  color: var(--dvir-black); line-height: 1.2; margin-bottom: .9rem;
+}
+.dvir-pt-section-teal .dvir-pt-h2,
+.dvir-pt-section-dark .dvir-pt-h2 { color: white; }
+.dvir-pt-h2 em { font-style: normal; color: var(--dvir-teal); }
+.dvir-pt-section-teal .dvir-pt-h2 em { color: rgba(255,255,255,.75); }
+.dvir-pt-lead {
+  font-size: 1rem; color: #333; line-height: 1.82;
+}
+.dvir-pt-lead-white { color: rgba(255,255,255,.78); }
+.dvir-pt-label {
+  display: inline-block; background: var(--dvir-teal-light); color: var(--dvir-teal-dark);
+  padding: .22rem .7rem; border-radius: 50px;
+  font-size: .78rem; font-weight: 700; margin-bottom: 1.1rem;
+}
+.dvir-pt-divider {
+  height: 4px;
+  background: linear-gradient(to left, var(--dvir-teal), transparent);
+  border-radius: 4px; margin: 3rem 0;
+}
+
+/* ============================================================
+   PAIN SECTION
+   ============================================================ */
+.dvir-pt-pain-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 1.5rem; margin-top: 2rem;
+}
+.dvir-pt-pain-card {
+  background: white; border-radius: var(--dvir-radius);
+  padding: 1.8rem;
+  box-shadow: var(--dvir-shadow-sm); border: 1px solid #eee;
+  transition: transform .3s, box-shadow .3s;
+}
+.dvir-pt-pain-card:hover { transform: translateY(-4px); box-shadow: var(--dvir-shadow); }
+.dvir-pt-pain-icon {
+  width: 50px; height: 50px; background: var(--dvir-teal-light); border-radius: .7rem;
+  display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;
+}
+.dvir-pt-pain-icon svg {
+  width: 25px; height: 25px; color: var(--dvir-teal);
+  fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round;
+}
+.dvir-pt-pain-card h3 { font-size: 1rem; font-weight: 800; margin-bottom: .5rem; }
+.dvir-pt-pain-card p { font-size: .9rem; color: #666; line-height: 1.7; }
+
+/* ============================================================
+   PROOF / CARDS GRID
+   ============================================================ */
+.dvir-pt-proof-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 1.4rem;
+}
+.dvir-pt-proof-card {
+  background: white; border-radius: var(--dvir-radius);
+  padding: 1.8rem;
+  box-shadow: var(--dvir-shadow-sm); border: 1px solid #eee;
+  transition: transform .3s, box-shadow .3s;
+}
+.dvir-pt-proof-card:hover { transform: translateY(-4px); box-shadow: var(--dvir-shadow); }
+.dvir-pt-proof-badge {
+  display: inline-block; background: var(--dvir-teal-light); color: var(--dvir-teal-dark);
+  padding: .22rem .7rem; border-radius: 50px;
+  font-size: .72rem; font-weight: 800; margin-bottom: 1rem;
+}
+.dvir-pt-proof-card h3 { font-size: 1.05rem; font-weight: 800; margin-bottom: .6rem; }
+.dvir-pt-proof-card p { font-size: .9rem; color: #555; line-height: 1.7; }
+.dvir-pt-proof-timing {
+  font-size: .78rem; color: var(--dvir-teal); font-weight: 700;
+  display: block; margin-top: .8rem;
+}
+
+/* ============================================================
+   PLANS / PRICING
+   ============================================================ */
+.dvir-pt-plan-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
+  gap: 2rem; max-width: 860px; margin: 0 auto;
+}
+.dvir-pt-plan-card {
+  background: white; border-radius: var(--dvir-radius);
+  padding: 2.2rem; box-shadow: var(--dvir-shadow);
+  border: 2px solid #eee; transition: border-color .3s, transform .3s;
+  position: relative;
+}
+.dvir-pt-plan-card.featured {
+  border-color: var(--dvir-teal);
+}
+.dvir-pt-plan-card:hover { transform: translateY(-4px); border-color: var(--dvir-teal); }
+.dvir-pt-plan-name {
+  font-size: 1.05rem; font-weight: 900; color: var(--dvir-teal); margin-bottom: .3rem;
+}
+.dvir-pt-plan-price {
+  font-size: 2.2rem; font-weight: 900; color: var(--dvir-black);
+  margin-bottom: .5rem; line-height: 1;
+}
+.dvir-pt-plan-price span { font-size: 1rem; color: #888; font-weight: 400; }
+.dvir-pt-plan-desc { font-size: .95rem; color: #555; line-height: 1.7; margin-bottom: 1.5rem; }
+.dvir-pt-plan-list { list-style: none; margin-bottom: 1.8rem; }
+.dvir-pt-plan-list li {
+  display: flex; align-items: flex-start; gap: .6rem;
+  font-size: .9rem; color: #444; margin-bottom: .55rem; line-height: 1.5;
+}
+.dvir-pt-plan-list li::before {
+  content: '✓'; color: var(--dvir-teal); font-weight: 900;
+  flex-shrink: 0; margin-top: .05rem;
+}
+.dvir-pt-plan-note {
+  text-align: center; font-size: .88rem; color: #777;
+  margin-top: 2rem; font-style: italic;
+}
+
+/* ============================================================
+   STRUCTURE GRID
+   ============================================================ */
+.dvir-pt-structure-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 1.2rem;
+}
+.dvir-pt-struct-item {
+  display: flex; align-items: center; gap: 1rem;
+  background: white; border-radius: var(--dvir-radius-sm); padding: 1.6rem;
+  box-shadow: var(--dvir-shadow-sm); border: 1px solid rgba(62,153,167,.18);
+}
+.dvir-pt-struct-num {
+  font-size: 1.5rem; font-weight: 900; color: var(--dvir-teal-light);
+  flex-shrink: 0;
+}
+.dvir-pt-struct-label strong { display: block; font-size: .95rem; font-weight: 800; color: var(--dvir-black); }
+.dvir-pt-struct-label span { font-size: .82rem; color: #777; }
+
+/* ============================================================
+   WHO SECTION
+   ============================================================ */
+.dvir-pt-who-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 1.2rem;
+}
+.dvir-pt-who-card {
+  background: white; border-radius: var(--dvir-radius);
+  padding: 1.6rem;
+  box-shadow: var(--dvir-shadow-sm); border: 1px solid #eee;
+  display: flex; align-items: flex-start; gap: .9rem;
+}
+.dvir-pt-who-check {
+  width: 32px; height: 32px; background: var(--dvir-teal-light); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; margin-top: .05rem;
+}
+.dvir-pt-who-check svg {
+  width: 16px; height: 16px; fill: none; stroke: var(--dvir-teal); stroke-width: 2.5;
+}
+.dvir-pt-who-card p { font-size: .92rem; color: #444; line-height: 1.65; }
+
+/* ============================================================
+   ABOUT
+   ============================================================ */
+.dvir-pt-about-grid {
+  display: grid; grid-template-columns: 1fr 420px;
+  gap: 4rem; align-items: center;
+}
+.dvir-pt-about-photo {
+  border-radius: var(--dvir-radius);
+  overflow: hidden;
+  min-height: 520px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: #0f0f0f;
+}
+.dvir-pt-about-content .dvir-pt-about-sub {
+  font-size: 1rem; color: var(--dvir-teal-light); font-weight: 600; margin-bottom: 1.5rem;
+}
+.dvir-pt-about-content p { margin-bottom: 1rem; }
+.dvir-pt-cred-list {
+  display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.5rem;
+}
+.dvir-pt-cred-item {
+  display: flex; align-items: center; gap: .5rem;
+  font-size: .85rem; color: rgba(255,255,255,.85);
+}
+.dvir-pt-cred-icon {
+  width: 32px; height: 32px;
+  display: flex; align-items: center; justify-content: center;
+}
+.dvir-pt-cred-icon svg { width: 16px; height: 16px; fill: none; stroke: var(--dvir-teal-light); stroke-width: 1.8; }
+
+/* ============================================================
+   TESTIMONIALS
+   ============================================================ */
+.dvir-pt-quote-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 1.4rem;
+}
+.dvir-pt-quote {
+  background: white; border-radius: var(--dvir-radius);
+  padding: 2rem; box-shadow: var(--dvir-shadow-sm);
+  border: 1px solid #eee; border-top: 3px solid var(--dvir-teal);
+}
+.dvir-pt-quote p { font-size: .95rem; color: #333; line-height: 1.75; font-style: italic; margin-bottom: 1.2rem; }
+.dvir-pt-quote-author strong { display: block; font-size: .9rem; font-weight: 800; color: var(--dvir-black); }
+.dvir-pt-quote-author span { font-size: .8rem; color: #888; }
+
+/* ============================================================
+   WIN METHOD
+   ============================================================ */
+.dvir-pt-win-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 1.5rem;
+}
+.dvir-pt-win-col {
+  background: rgba(255,255,255,.05); border: 1px solid rgba(62,153,167,.25);
+  border-radius: var(--dvir-radius); padding: 2rem;
+}
+.dvir-pt-win-col-tag {
+  font-size: .72rem; font-weight: 900; flex-shrink: 0; font-family: var(--dvir-font);
+  background: rgba(62,153,167,.18); padding: .22rem .7rem; border-radius: 50px;
+  color: var(--dvir-teal-light); display: inline-block; margin-bottom: .8rem;
+}
+.dvir-pt-win-col-title {
+  font-size: 1.05rem; font-weight: 900; color: white; margin-bottom: .5rem;
+}
+.dvir-pt-win-col p { font-size: .93rem; color: rgba(255,255,255,.72); line-height: 1.78; }
+
+/* ============================================================
+   RESPONSE (WHAT CHANGES)
+   ============================================================ */
+.dvir-pt-response-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 1.2rem; }
+.dvir-pt-response-card {
+  background: white; border-radius: var(--dvir-radius-sm);
+  padding: 1.5rem; box-shadow: var(--dvir-shadow-sm); border: 1px solid #eee;
+  display: flex; align-items: flex-start; gap: .9rem;
+}
+.dvir-pt-response-num {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #3e99a7 !important;
+  opacity: 1 !important;
+  flex-shrink: 0;
+  line-height: 1;
+}
+.dvir-pt-response-card p {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  color: #1f1f1f !important;
+  font-size: 1rem;
+  line-height: 1.65;
+  margin: 0;
+  flex: 1;
+  min-width: 0;
+  text-align: right;
+  direction: rtl;
+}
+.dvir-pt-response-card {
+  color: #1f1f1f !important;
+  overflow: visible;
+  align-items: flex-start;
+}
+.dvir-pt-response-card.dvir-pt-fadein {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* ============================================================
+   MOMENTUM (WHAT YOU GET)
+   ============================================================ */
+.dvir-pt-momentum-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 1.4rem;
+}
+.dvir-pt-momentum-item {
+  background: white; border-radius: var(--dvir-radius);
+  padding: 1.8rem; box-shadow: var(--dvir-shadow-sm); border: 1px solid #eee;
+  display: flex; align-items: flex-start; gap: 1rem;
+  transition: transform .3s, box-shadow .3s;
+}
+.dvir-pt-momentum-item:hover { transform: translateY(-4px); box-shadow: var(--dvir-shadow); }
+.dvir-pt-momentum-dot {
+  width: 12px; height: 12px; background: var(--dvir-teal);
+  border-radius: 50%; flex-shrink: 0; margin-top: .4rem;
+}
+.dvir-pt-momentum-item h4 { font-size: 1rem; font-weight: 800; margin-bottom: .4rem; }
+.dvir-pt-momentum-item p { font-size: .9rem; color: #666; line-height: 1.7; }
+.dvir-pt-momentum-quote {
+  background: var(--dvir-teal-light); border-radius: var(--dvir-radius);
+  padding: 2rem; margin-top: 2.5rem; text-align: center;
+}
+.dvir-pt-momentum-quote p { font-size: 1rem; color: #444; line-height: 1.7; }
+.dvir-pt-momentum-quote p + p { margin-top: .7rem; }
+.dvir-pt-momentum-quote em { font-style: normal; color: var(--dvir-teal); font-weight: 700; }
+
+/* ============================================================
+   STEPS (HOW TO JOIN)
+   ============================================================ */
+.dvir-pt-steps {
+  display: flex; flex-direction: column; gap: 1.2rem;
+  position: relative; max-width: 720px; margin: 0 auto;
+}
+.dvir-pt-steps::before {
+  content: ''; position: absolute;
+  right: 27px; top: 0; bottom: 0; width: 2px;
+  background: var(--dvir-teal-light); z-index: 0;
+}
+.dvir-pt-step {
+  display: flex; align-items: flex-start; gap: 1.2rem;
+  background: white; border-radius: var(--dvir-radius);
+  padding: 1.5rem; box-shadow: var(--dvir-shadow-sm); border: 1px solid #eee;
+  position: relative; z-index: 1;
+}
+.dvir-pt-step-circle {
+  width: 56px; height: 56px; background: white;
+  border: 3px solid var(--dvir-teal);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem; font-weight: 900; color: var(--dvir-teal);
+  flex-shrink: 0; font-family: var(--dvir-font);
+}
+.dvir-pt-step h4 { font-size: 1rem; font-weight: 800; margin-bottom: .3rem; }
+.dvir-pt-step p { font-size: .8rem; color: #666; line-height: 1.6; }
+.dvir-pt-step-note {
+  font-size: .78rem; color: var(--dvir-teal); font-weight: 700;
+  display: inline-block; margin-top: .3rem;
+}
+
+/* ============================================================
+   CTA SECTION
+   ============================================================ */
+.dvir-pt-cta-actions {
+  display: flex; flex-wrap: wrap; gap: 1rem;
+  margin-top: 2rem; justify-content: center;
+}
+.dvir-pt-cta-micro {
+  font-size: .85rem; color: rgba(255,255,255,.55);
+  margin-top: 1.2rem; text-align: center;
+}
+
+/* ============================================================
+   PROFESSIONAL BOUNDARY
+   ============================================================ */
+.dvir-pt-boundary-box {
+  background: var(--dvir-teal-light); border-radius: var(--dvir-radius); padding: 2rem;
+  max-width: 760px; margin: 2rem auto 0;
+}
+.dvir-pt-boundary-box h4 { font-size: 1rem; font-weight: 800; margin-bottom: .8rem; }
+.dvir-pt-boundary-box p { font-size: .92rem; color: #444; line-height: 1.75; }
+
+/* ============================================================
+   ACCORDION / FAQ
+   ============================================================ */
+.dvir-pt-accordion { display: flex; flex-direction: column; gap: .7rem; }
+.dvir-pt-acc-item {
+  background: white; border-radius: var(--dvir-radius);
+  box-shadow: var(--dvir-shadow-sm); border: 1px solid #eee;
+  overflow: hidden; transition: box-shadow .3s;
+}
+.dvir-pt-acc-item:hover { box-shadow: 0 8px 25px rgba(0,0,0,.1); }
+.dvir-pt-acc-trigger {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.3rem 1.5rem; cursor: pointer;
+  font-weight: 700; font-size: .98rem; transition: color .3s;
+  background: none; border: none; width: 100%;
+  text-align: right; font-family: var(--dvir-font); color: var(--dvir-black);
+}
+.dvir-pt-acc-trigger:hover { color: var(--dvir-teal); }
+.dvir-pt-acc-icon svg {
+  width: 18px; height: 18px; fill: none;
+  stroke: currentColor; stroke-width: 2.2;
+  transition: transform .35s; flex-shrink: 0;
+}
+.dvir-pt-acc-item.open .dvir-pt-acc-icon svg { transform: rotate(180deg); }
+.dvir-pt-acc-content {
+  max-height: 0; overflow: hidden;
+  transition: max-height .4s ease, padding .4s ease;
+  background: white;
+}
+.dvir-pt-acc-content.open { max-height: 600px; padding: 0 1.5rem 1.25rem; }
+.dvir-pt-acc-inner { font-size: .92rem; color: #555; line-height: 1.75; padding-top: .3rem; }
+
+/* ============================================================
+   CONTACT FORM
+   ============================================================ */
+.dvir-pt-contact-form {
+  max-width: 620px; margin: 0 auto;
+  background: white; border-radius: var(--dvir-radius);
+  padding: 2.5rem; box-shadow: var(--dvir-shadow);
+}
+.dvir-pt-form-group { margin-bottom: 1.2rem; }
+.dvir-pt-form-group label {
+  display: block; font-size: .88rem; font-weight: 700; margin-bottom: .4rem; color: #333;
+}
+.dvir-pt-form-group input,
+.dvir-pt-form-group textarea,
+.dvir-pt-form-group select {
+  width: 100%; padding: .85rem 1rem; border: 1.5px solid #ddd;
+  border-radius: .75rem; font-family: var(--dvir-font); font-size: .95rem;
+  color: var(--dvir-black); background: #fafafa; direction: rtl;
+  transition: border-color .3s;
+}
+.dvir-pt-form-group input:focus,
+.dvir-pt-form-group textarea:focus,
+.dvir-pt-form-group select:focus {
+  outline: none; border-color: var(--dvir-teal);
+}
+.dvir-pt-form-group textarea { min-height: 100px; resize: vertical; }
+.dvir-pt-form-checkbox {
+  display: flex; align-items: flex-start; gap: .7rem;
+  font-size: .88rem; color: #555;
+}
+.dvir-pt-form-checkbox input { width: auto; margin-top: .25rem; }
+.dvir-pt-form-success {
+  display: none; text-align: center; padding: 2rem;
+  background: var(--dvir-teal-light); border-radius: var(--dvir-radius);
+}
+.dvir-pt-form-success h3 { color: var(--dvir-teal-dark); margin-bottom: .8rem; font-size: 1.2rem; }
+.dvir-pt-form-success p { color: #555; font-size: .95rem; line-height: 1.7; }
+
+/* ============================================================
+   BG IMAGE SECTION
+   ============================================================ */
+.dvir-pt-bg-image-section {
+  background-size: cover; background-position: center top;
+  position: relative;
+}
+.dvir-pt-bg-image-section::before {
+  content: ''; position: absolute; inset: 0;
+  background: rgba(10,10,10,.72); z-index: 0;
+}
+.dvir-pt-bg-image-section .dvir-pt-container { position: relative; z-index: 1; }
+.dvir-pt-video-wrapper {
+  border-radius: var(--dvir-radius); overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,.4);
+  max-width: 760px; margin: 0 auto;
+}
+.dvir-pt-video-wrapper iframe {
+  width: 100%; aspect-ratio: 16/9; display: block; border: none;
+}
+
+/* ============================================================
+   SMALL WINS LIST
+   ============================================================ */
+.dvir-pt-small-win-list {
+  font-size: .92rem; color: rgba(255,255,255,.75); line-height: 2.2;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.dvir-pt-footer {
+  background: #0a0a0a; color: rgba(255,255,255,.6);
+  padding: 3rem 0 1.5rem;
+}
+.dvir-pt-footer-inner {
+  max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;
+  display: grid; grid-template-columns: 1fr auto; gap: 2rem;
+  align-items: center;
+}
+.dvir-pt-footer-logo img { height: 32px; width: auto; opacity: .75; margin-bottom: .6rem; }
+.dvir-pt-footer-logo p { font-size: .82rem; color: rgba(255,255,255,.4); }
+.dvir-pt-footer-social { display: flex; gap: 1rem; align-items: center; }
+.dvir-pt-footer-social a img { height: 22px; width: auto; opacity: .5; transition: opacity .3s; }
+.dvir-pt-footer-social a:hover img { opacity: 1; }
+.dvir-pt-footer-copy { text-align: center; font-size: .78rem; color: rgba(255,255,255,.25); margin-top: 2rem; }
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes dvir-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+.dvir-pt-fadein { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+.dvir-pt-fadein.visible { opacity: 1; transform: translateY(0); }
+.dvir-pt-delay-1 { transition-delay: .12s; }
+.dvir-pt-delay-2 { transition-delay: .24s; }
+.dvir-pt-delay-3 { transition-delay: .36s; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  .dvir-pt-hero-video {
+    display: block !important;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    opacity: .32;
+    z-index: 0;
+  }
+  .dvir-pt-hero-inner { padding: 7rem 1.2rem 3rem; }
+  .dvir-pt-about-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .dvir-pt-about-photo {
+    min-height: 280px;
+    background-size: cover;
+    background-position: center top;
+  }
+  .dvir-pt-footer-inner { grid-template-columns: 1fr; text-align: center; }
+  .dvir-pt-footer-social { justify-content: center; }
+  .dvir-pt-cta-actions { flex-direction: column; width: 100%; }
+  .dvir-pt-hero-cta { flex-direction: column; align-items: flex-start; }
+  .dvir-pt-pain-grid,
+  .dvir-pt-proof-grid,
+  .dvir-pt-plan-grid,
+  .dvir-pt-structure-grid,
+  .dvir-pt-who-grid,
+  .dvir-pt-quote-grid,
+  .dvir-pt-win-grid,
+  .dvir-pt-response-grid,
+  .dvir-pt-momentum-grid { grid-template-columns: 1fr; }
+}
+
+/* Floating white logo inside hero */
+.dvir-pt-hero-floating-logo {
+  position: absolute;
+  top: 1.4rem;
+  right: 50%;
+  transform: translateX(50%);
+  z-index: 3;
+  width: min(360px, 70vw);
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+.dvir-pt-hero-floating-logo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+@media (max-width: 768px) {
+  .dvir-pt-hero-floating-logo {
+    top: 1.1rem;
+    width: min(300px, 78vw);
+  }
+  .dvir-pt-hero-inner {
+    padding-top: 8.6rem;
+  }
+}
+
+/* Hide WordPress/Elementor page title and theme header if injected outside the HTML widget */
+.entry-title,
+.page-title,
+.wp-block-post-title,
+.elementor-page-title,
+header.site-header,
+.site-header,
+#masthead {
+  display: none !important;
+}
+
+</style>
+</head>
+<body>
+
+
+<!-- ============================================================
+   1. HERO — VIDEO
+   ============================================================ -->
+<section class="dvir-pt-hero" id="hero">
+  <video class="dvir-pt-hero-video" autoplay muted loop playsinline preload="metadata">
+    <source src="https://winschool.w-in.co.il/wp-content/uploads/2026/05/VID-20200202-WA0009-1.mp4" type="video/mp4">
+  </video>
+  <div class="dvir-pt-hero-overlay"></div>
+  <div class="dvir-pt-hero-floating-logo" aria-label="דביר פרץ אנשים יוצרים ניצחונות">
+    <img src="https://winschool.w-in.co.il/wp-content/uploads/2026/06/Dvir-logo-BW.png" alt="דביר פרץ אנשים יוצרים ניצחונות">
+  </div>
+  <div class="dvir-pt-hero-inner">
+    <span class="dvir-pt-hero-badge-video dvir-pt-fadein">
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+      יוצרים ניצחונות בדרך
+    </span>
+    <h1 class="dvir-pt-fadein dvir-pt-delay-1">
+      יש בך יותר<br>
+      <em>ממה שיוצא ממך</em><br>
+      ברגע האמת
+    </h1>
+    <p class="dvir-pt-hero-sub dvir-pt-fadein dvir-pt-delay-2">
+      תהליך מנטורינג אישי וקבוצתי בשיטת ווין לחיזוק ביטחון עצמי, שפת גוף, נוכחות, הצגה עצמית ויכולת פעולה בתוך חדר חזרות אמיתי לחיים.
+    </p>
+    <div class="dvir-pt-hero-body-short dvir-pt-fadein dvir-pt-delay-2">
+      <p>אני דביר פרץ.</p>
+      <p>מעל 18 שנה אני עובד עם אנשים וקבוצות, ורואה שוב ושוב את אותו הדבר: לאנשים רבים לא חסרה יכולת. לא חסר רצון. אבל ברגע האמת — מול ראיון, פגישה, שאלה או הצעד הבא — משהו נסגר.</p>
+      <p>אני מזמין אותך להיכנס איתי לחדר חזרות לחיים. כאן לא רק מדברים על שינוי — <em>מתרגלים אותו.</em></p>
+    </div>
+    <div class="dvir-pt-hero-cta dvir-pt-fadein dvir-pt-delay-3">
+      <a href="#contact" class="dvir-pt-btn-primary">בדיקת התאמה אישית עם דביר</a>
+      <a href="https://wa.me/972507467467?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%93%D7%91%D7%99%D7%A8%2C%20%D7%A8%D7%90%D7%99%D7%AA%D7%99%20%D7%90%D7%AA%20%D7%99%D7%95%D7%A6%D7%A8%D7%99%D7%9D%20%D7%A0%D7%99%D7%A6%D7%97%D7%95%D7%A0%D7%95%D7%AA%20%D7%91%D7%93%D7%A8%D7%9A%20%D7%95%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%91%D7%93%D7%95%D7%A7%20%D7%94%D7%AA%D7%90%D7%9E%D7%94%20%D7%9C%D7%AA%D7%94%D7%9C%D7%99%D7%9A" class="dvir-pt-wa-btn" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        שלחו לי וואטסאפ לבדיקת התאמה
+      </a>
+    </div>
+    <p class="dvir-pt-hero-micro dvir-pt-fadein dvir-pt-delay-3">הקבוצות נפתחות במספר משתתפים מוגבל כדי לאפשר עבודה אישית אמיתית</p>
+  </div>
+  <div class="dvir-pt-hero-scroll" aria-hidden="true">
+    <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+</section>
+
+<!-- ============================================================
+   2. PAIN — הבעיה
+   ============================================================ -->
+<section class="dvir-pt-section dvir-pt-section-alt" id="pain">
+  <div class="dvir-pt-container">
+    <div class="dvir-pt-section-header">
+      <span class="dvir-pt-label">מה קורה ברגע האמת</span>
+      <h2 class="dvir-pt-h2">לפעמים אתה לא צריך עוד עצה.<br><em>אתה צריך מקום לתרגל בו את הרגע שנתקע.</em></h2>
+      <p class="dvir-pt-lead" style="max-width:680px;margin:1rem auto 0">
+        יש שלב שבו אדם כבר מבין שהוא צריך לעשות משהו — לחזור לעבודה, להתחיל ללמוד, לשלוח קורות חיים, להגיע לראיון, לפתוח שיחה. אבל ההבנה לא תמיד מספיקה.
+      </p>
+    </div>
+    <div class="dvir-pt-pain-grid">
+      <div class="dvir-pt-pain-card dvir-pt-fadein">
+        <div class="dvir-pt-pain-icon">
+          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <h3>הגוף נסגר</h3>
+        <p>ברגע האמת המילים נעלמות, הביטחון יורד, והצעד הבא שוב נדחה.</p>
+      </div>
+      <div class="dvir-pt-pain-card dvir-pt-fadein dvir-pt-delay-1">
+        <div class="dvir-pt-pain-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg>
+        </div>
+        <h3>יש בך יותר ממה שיוצא החוצה</h3>
+        <p>לא חסרה לך יכולת. לפעמים חסר מרחב שבו אפשר לתרגל בלי להישפט.</p>
+      </div>
+      <div class="dvir-pt-pain-card dvir-pt-fadein dvir-pt-delay-2">
+        <div class="dvir-pt-pain-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h3>מתחילים מפעולה קטנה</h3>
+        <p>הודעה שנשלחת, כניסה לחדר, שיחה שלא נדחית, מבט שמחזיק עוד רגע.</p>
+      </div>
+    </div>
+    <div style="max-width:720px;margin:2.5rem auto 0;text-align:center">
+      <p class="dvir-pt-lead" style="color:#555">
+        לא כי אין בך יכולת. לא כי אין בך כוח. אלא כי יש רגעים בחיים שאי אפשר לפתור רק בראש. צריך להיכנס אליהם, לתרגל אותם, לקבל שיקוף, ולנסות שוב בצורה שמחזיקה אותך ולא מפרקת אותך.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+   3. WHY GROUP — למה קבוצה
+   ============================================================ -->
+<section class="dvir-pt-section" id="group">
+  <div class="dvir-pt-container">
+    <div class="dvir-pt-about-grid">
+      <div class="dvir-pt-about-content">
+        <span class="dvir-pt-label">למה קבוצה?</span>
+        <h2 class="dvir-pt-h2">החיים קורים מול אנשים.<br>לכן גם התרגול צריך לקרות מול אנשים.</h2>
+        <p class="dvir-pt-lead">הקבוצה היא לא רק עוד אנשים בחדר — היא חדר חזרות לחיים.</p>
+        <p class="dvir-pt-lead" style="color:#555;margin-top:1rem">בראיון יש מישהו מולך. בפגישה יש מישהו מולך. כשאתה מציג את עצמך יש מישהו מולך. לכן בתוך הקבוצה אפשר לתרגל את הדבר האמיתי — אבל במרחב בטוח, מכבד ומוחזק.</p>
+        <p class="dvir-pt-lead" style="color:#555;margin-top:1rem">הקבוצה לא רק משקפת — היא נותנת כוח. עם הזמן נוצרת נבחרת: אנשים שלא באו להיות מושלמים, אלא באו להתחיל לזוז יחד, כל אחד מהמקום שלו.</p>
+        <div style="margin-top:2rem">
+          <a href="#contact" class="dvir-pt-btn-primary">אני רוצה לבדוק התאמה</a>
+        </div>
+      </div>
+      <div class="dvir-pt-about-photo"
+           style="background-image:url('https://winschool.w-in.co.il/wp-content/uploads/2025/05/7.png')">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+   4. WHAT CHANGES — מה יכול להשתנות
+   ============================================================ -->
+<section class="dvir-pt-section-alt dvir-pt-section" id="changes">
+  <div class="dvir-pt-container">
+    <div class="dvir-pt-section-header">
+      <span class="dvir-pt-label">תוצאות מהדרך</span>
+      <h2 class="dvir-pt-h2">מה יכול להשתנות בפועל?</h2>
+      <p class="dvir-pt-lead" style="max-width:600px;margin:1rem auto 0">
+        המטרה היא לא שתצא עם סיסמה יפה. המטרה היא שתרגיש, תתרגל ותבנה כלים שאפשר להשתמש בהם בחיים עצמם.
+      </p>
+    </div>
+    <div class="dvir-pt-response-grid">
+      <div class="dvir-pt-response-card dvir-pt-fadein">
+        <div class="dvir-pt-response-num">01</div>
+        <p>תדע להציג את עצמך בצורה ברורה יותר.</p>
+      </div>
+      <div class="dvir-pt-response-card dvir-pt-fadein dvir-pt-delay-1">
+        <div class="dvir-pt-response-num">02</div>
+        <p>תרגיש נוכח יותר מול אנשים.</p>
+      </div>
+      <div class="dvir-pt-response-card dvir-pt-fadein dvir-pt-delay-2">
+        <div class="dvir-pt-response-num">03</div>
+        <p>תדע להיכנס לחדר בלי להיעלם.</p>
+      </div>
+      <div class="dvir-pt-response-card dvir-pt-fadein">
+        <div class="dvir-pt-response-num">04</div>
+        <p>תדע לפתוח פגישה או שיחה בביטחון.</p>
+      </div>
+      <div class="dvir-pt-response-card dvir-pt-fadein dvir-pt-delay-1">
+        <div class="dvir-pt-response-num">05</div>
+        <p>תדע להשתמש בשפת הגוף שלך כדי להרגיש יציב יותר.</p>
+      </div>
+      <div class="dvir-pt-response-card dvir-pt-fadein dvir-pt-delay-2">
+        <div class="dvir-pt-response-num">06</div>
+        <p>תדע להסביר את עצמך בלי להתנצל.</p>
+      </div>
+      <div class="dvir-pt-response-card dvir-pt-fadein">
+        <div class="dvir-pt-response-num">07</div>
+        <p>תדע להתכונן טוב יותר לראיון או לשיחה מקצועית.</p>
+      </div>
+      <div class="dvir-pt-response-card dvir-pt-fadein dvir-pt-delay-1">
+        <div class="dvir-pt-response-num">08</div>
+        <p>תדע לעמוד מאחורי קורות החיים שלך.</p>
+      </div>
+      <div class="dvir-pt-response-card dvir-pt-fadein dvir-pt-delay-2">
+        <div class="dvir-pt-response-num">09</div>
+        <p>תעשה לפחות פעולה אחת שדחית הרבה זמן.</p>
+      </div>
+      <div class="dvir-pt-response-card dvir-pt-fadein">
+        <div class="dvir-pt-response-num">10</div>
+        <p>תצא עם תוכנית פעולה אישית להמשך.</p>
+      </div>
+    </div>
+    <div style="margin-top:2.5rem;text-align:center">
+      <img src="https://winschool.w-in.co.il/wp-content/uploads/2025/05/4-1.png"
+           alt="מה משתנה בתהליך" style="border-radius:var(--dvir-radius);max-height:380px;width:100%;object-fit:cover;margin:0 auto;box-shadow:var(--dvir-shadow)">
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+   5. WHAT YOU GET — מה מקבלים
+   ============================================================ -->
+<section class="dvir-pt-section" id="get">
+  <div class="dvir-pt-container">
+    <div class="dvir-pt-section-header">
+      <span class="dvir-pt-label">תוכן התהליך</span>
+      <h2 class="dvir-pt-h2">מה <em>מקבלים</em> בתהליך?</h2>
+    </div>
+    <div class="dvir-pt-momentum-grid">
+      <div class="dvir-pt-momentum-item dvir-pt-fadein">
+        <div class="dvir-pt-momentum-dot"></div>
+        <div>
+          <h4>נוכחות וביטחון</h4>
+          <p>זיהוי מה קורה לי ברגע אמת, איך לא להיעלם, ואיך להחזיק את עצמי עוד רגע בתוך סיטואציה.</p>
+        </div>
+      </div>
+      <div class="dvir-pt-momentum-item dvir-pt-fadein dvir-pt-delay-1">
+        <div class="dvir-pt-momentum-dot"></div>
+        <div>
+          <h4>שפת גוף ורושם ראשוני</h4>
+          <p>כניסה לחדר, יציבה, מבט, קול, נשימה, פתיחת פגישה ורושם ראשוני.</p>
+        </div>
+      </div>
+      <div class="dvir-pt-momentum-item dvir-pt-fadein dvir-pt-delay-2">
+        <div class="dvir-pt-momentum-dot"></div>
+        <div>
+          <h4>תקשורת והצגה עצמית</h4>
+          <p>לדבר ברור, להקשיב, לענות, לבקש, להחזיק שיחה ולהציג את עצמי בלי להתבלבל.</p>
+        </div>
+      </div>
+      <div class="dvir-pt-momentum-item dvir-pt-fadein">
+        <div class="dvir-pt-momentum-dot"></div>
+        <div>
+          <h4>סימולציות ופעולה</h4>
+          <p>תרגול ראיון, פגישה, פנייה, שיחה מול סמכות, הצגה עצמית ובקשת עזרה.</p>
+        </div>
+      </div>
+      <div class="dvir-pt-momentum-item dvir-pt-fadein dvir-pt-delay-1">
+        <div class="dvir-pt-momentum-dot"></div>
+        <div>
+          <h4>קורות חיים, ראיון ופנייה</h4>
+          <p>קורות חיים הם לא רק מסמך. הם סיפור שצריך לדעת להחזיק.</p>
+        </div>
+      </div>
+      <div class="dvir-pt-momentum-item dvir-pt-fadein dvir-pt-delay-2">
+        <div class="dvir-pt-momentum-dot"></div>
+        <div>
+          <h4>ליווי אישי והטמעה</h4>
+          <p>מנטורינג אישי, קבוצת וואטסאפ, משימות קטנות וסרטונים מסכמים מדביר.</p>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:2.5rem;text-align:center">
+      <img src="https://winschool.w-in.co.il/wp-content/uploads/2026/06/VideoCapture_20230330-112959.jpg"
+           alt="פעילות קבוצתית" style="border-radius:var(--dvir-radius);max-height:380px;width:100%;object-fit:cover;margin:0 auto;box-shadow:var(--dvir-shadow)">
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+   6. PLANS — מסלולים
+   ============================================================ -->
+<section class="dvir-pt-section-alt dvir-pt-section" id="plans">
+  <div class="dvir-pt-container">
+    <div class="dvir-pt-section-header">
+      <span class="dvir-pt-label">מסלולי התוכנית</span>
+      <h2 class="dvir-pt-h2">שתי אפשרויות לתהליך,<br>לפי עומק העבודה שמתאים לך</h2>
+      <p class="dvir-pt-lead" style="max-width:640px;margin:1rem auto 0">
+        לא כולם צריכים את אותו עומק של ליווי. לכן יש מסלול מלא שנותן תהליך חזק ומובנה, ויש מסלול מורחב למי שרוצה עוד זמן אישי כדי להפוך את התהליך לתוצר מדויק שאפשר להשתמש בו בעולם האמיתי.
+      </p>
+    </div>
+    <div class="dvir-pt-plan-grid">
+      <!-- מסלול מלא -->
+      <div class="dvir-pt-plan-card dvir-pt-fadein">
+        <div class="dvir-pt-plan-name">מסלול מלא</div>
+        <div class="dvir-pt-plan-price">8,600 ₪ <span></span></div>
+        <p class="dvir-pt-plan-desc">תהליך מלא ומעשי לחיזוק ביטחון, נוכחות, תקשורת, שפת גוף, הצגה עצמית ויכולת פעולה.</p>
+        <ul class="dvir-pt-plan-list">
+          <li>8 מפגשים קבוצתיים בני 3 שעות</li>
+          <li>4 מפגשי מנטורינג אישיים בני 60 דקות</li>
+          <li>עד 12 משתתפים בקבוצה</li>
+          <li>קבוצת וואטסאפ מלווה</li>
+          <li>משימות קטנות בין המפגשים</li>
+          <li>סרטונים מסכמים מדביר</li>
+          <li>עבודה על הצגה עצמית</li>
+          <li>עבודה על קורות חיים</li>
+          <li>הכנה בסיסית לראיון או שיחה מקצועית</li>
+          <li>תרגול מול קבוצה</li>
+          <li>כיבוד קל בכל מפגש</li>
+        </ul>
+        <a href="#contact" class="dvir-pt-btn-outline-teal" style="width:100%;justify-content:center">בדיקת התאמה למסלול המלא</a>
+      </div>
+      <!-- מסלול מורחב -->
+      <div class="dvir-pt-plan-card featured dvir-pt-fadein dvir-pt-delay-1">
+        <div class="dvir-pt-proof-badge" style="position:absolute;top:1.2rem;left:1.5rem">מומלץ</div>
+        <div class="dvir-pt-plan-name">מסלול מורחב</div>
+        <div class="dvir-pt-plan-price">9,800 ₪ <span></span></div>
+        <p class="dvir-pt-plan-desc">מסלול למי שרוצה להעמיק את העבודה האישית ולצאת עם תוצר חזק, מדויק ושימושי יותר.</p>
+        <ul class="dvir-pt-plan-list">
+          <li>כולל את כל המסלול המלא, ובנוסף:</li>
+          <li>2 פגישות אישיות נוספות — 90 דקות כל אחת</li>
+          <li>עבודה אישית מעמיקה בשתי הפגישות על תוצר ספציפי לבחירתך ובהתאם להתאמה.<br><span style="font-size:.85rem;color:#666">לדוגמה: סרטון הצגה עצמית, או הכנה לראיון, או דיוק קורות חיים ופנייה יזומה.</span></li>
+        </ul>
+        <a href="#contact" class="dvir-pt-btn-primary" style="width:100%;justify-content:center">בדיקת התאמה למסלול המורחב</a>
+      </div>
+    </div>
+    <p class="dvir-pt-plan-note">הבחירה במסלול נעשית לאחר שיחת התאמה, בהתאם לצורך, למטרה האישית ולעומק העבודה שנכון לך.</p>
+  </div>
+</section>
+
+<!-- ============================================================
+   7. STRUCTURE — איך התהליך בנוי
+   ============================================================ -->
+<section class="dvir-pt-section" id="structure">
+  <div class="dvir-pt-container">
+    <div class="dvir-pt-section-header">
+      <span class="dvir-pt-label">מבנה התהליך</span>
+      <h2 class="dvir-pt-h2">קבוצה קטנה, ליווי אישי<br>ותהליך מדורג</h2>
+    </div>
+    <div class="dvir-pt-structure-grid dvir-pt-fadein">
+      <div class="dvir-pt-struct-item">
+        <div class="dvir-pt-struct-num">12</div>
+        <div class="dvir-pt-struct-label"><strong>משתתפים בקבוצה</strong><span>עד 12 בלבד</span></div>
+      </div>
+      <div class="dvir-pt-struct-item">
+        <div class="dvir-pt-struct-num">8</div>
+        <div class="dvir-pt-struct-label"><strong>מפגשים קבוצתיים</strong><span>3 שעות כל מפגש</span></div>
+      </div>
+      <div class="dvir-pt-struct-item">
+        <div class="dvir-pt-struct-num">4</div>
+        <div class="dvir-pt-struct-label"><strong>מנטורינג אישי</strong><span>60 דקות כל מפגש</span></div>
+      </div>
+      <div class="dvir-pt-struct-item">
+        <div class="dvir-pt-struct-num">+</div>
+        <div class="dvir-pt-struct-label"><strong>קבוצת וואטסאפ</strong><span>משימות + סרטון שבועי</span></div>
+      </div>
+    </div>
+    <div style="margin-top:2.5rem;text-align:center">
+      <img src="https://winschool.w-in.co.il/wp-content/uploads/2025/05/7-1.png"
+           alt="מבנה התהליך" style="border-radius:var(--dvir-radius);max-height:380px;width:100%;object-fit:cover;margin:0 auto;box-shadow:var(--dvir-shadow)">
+    </div>
+    <div class="dvir-pt-momentum-quote" style="margin-top:3rem">
+      <p>גם אם יש לך חשש, אתה לא חייב לעשות הכל מיד.</p>
+      <p>בתהליך נכון, דברים מתחילים לצאת ממך בקצב שלך. אתה רואה, מתנסה, מקבל כוח מהקבוצה, <em>ופתאום מגלה שאתה מוכן לעשות צעד שלא היית מוכן לעשות לבד.</em></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+   8. WIN METHOD — שיטת ווין
+   ============================================================ -->
+<section class="dvir-pt-section-dark" id="win-method">
+  <div class="dvir-pt-container">
+    <div class="dvir-pt-section-header">
+      <span class="dvir-pt-label" style="background:rgba(62,153,167,.25);color:var(--dvir-teal-light)">שיטת ווין</span>
+      <h2 class="dvir-pt-h2">ווין היא לא אוסף פעילויות.<br>היא שיטה שנבנתה מהשטח.</h2>
+      <p class="dvir-pt-lead dvir-pt-lead-white" style="max-width:640px;margin:1rem auto 0">
+        שיטת ווין היא שיטת אימון והעצמה קבוצתית ואישית שפיתחתי לאורך שנים מתוך עבודה עם אנשים וקבוצות במצבי חיים שונים. היא מבוססת על חוויה, משחק, משימה, פעולה, שיקוף ותרגול בזמן אמת.
+      </p>
+    </div>
+    <div class="dvir-pt-win-grid">
+      <div class="dvir-pt-win-col dvir-pt-fadein">
+        <div class="dvir-pt-win-col-tag">Gate 01</div>
+        <div class="dvir-pt-win-col-title">מי לוקח מקום ומי נעלם</div>
+        <p>דרך משחק או משימה אפשר לראות מהר מאוד: מי לוקח מקום, מי נעלם, מי מפחד לטעות, מי מחכה לאישור.</p>
+      </div>
+      <div class="dvir-pt-win-col dvir-pt-fadein dvir-pt-delay-1">
+        <div class="dvir-pt-win-col-tag">Gate 02</div>
+        <div class="dvir-pt-win-col-title">חוויה ורגע אמת</div>
+        <p>ווין לא מנסה לשכנע אדם להשתנות רק דרך הראש. היא מכניסה אותו לחוויה, לקבוצה, למשימה ולרגע אמת.</p>
+      </div>
+      <div class="dvir-pt-win-col dvir-pt-fadein dvir-pt-delay-2">
+        <div class="dvir-pt-win-col-tag">Gate 03</div>
+        <div class="dvir-pt-win-col-title">שיקוף וצמיחה</div>
+        <p>שם מאפשרים לאדם לפגוש את עצמו, לקבל שיקוף, לגלות כוח ולתרגל דרך חדשה לפעול בעולם.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:3rem">
+      <img src="https://winschool.w-in.co.il/wp-content/uploads/2026/06/VideoCapture_20230330-113006.jpg"
+           alt="שיטת ווין בפעולה" style="border-radius:var(--dvir-radius);max-height:340px;width:100%;object-fit:cover;opacity:.85;margin:0 auto;box-shadow:0 20px 60px rgba(0,0,0,.5)">
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ============================================================
+   10. WHO — למי זה מתאים
+   ============================================================ -->
+<section class="dvir-pt-section-alt dvir-pt-section" id="who">
+  <div class="dvir-pt-container">
+    <div class="dvir-pt-section-header">
+      <span class="dvir-pt-label">למי זה מתאים</span>
+      <h2 class="dvir-pt-h2">למי התהליך מתאים?</h2>
+      <p class="dvir-pt-lead" style="max-width:620px;margin:1rem auto 0">
+        יוצרים ניצחונות בדרך מתאים לאנשים שרוצים לזוז מנקודה אחת לנקודה אחרת — בין אם זה להשתלב בשוק העבודה, להתחיל ללמוד, לחזור לעשייה אחרי תקופה מורכבת, או לשפר את היכולת להציג את עצמם.
+      </p>
+    </div>
+    <div class="dvir-pt-who-grid">
+      <div class="dvir-pt-who-card dvir-pt-fadein">
+        <div class="dvir-pt-who-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <p>אתה מרגיש שיש פער בין מה שיש בך לבין מה שיוצא החוצה ברגע אמת.</p>
+      </div>
+      <div class="dvir-pt-who-card dvir-pt-fadein dvir-pt-delay-1">
+        <div class="dvir-pt-who-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <p>אתה רוצה להשתלב בעבודה, בלימודים, בהכשרה או במסגרת חדשה.</p>
+      </div>
+      <div class="dvir-pt-who-card dvir-pt-fadein dvir-pt-delay-2">
+        <div class="dvir-pt-who-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <p>אתה רוצה לדעת להציג את עצמך בצורה ברורה יותר.</p>
+      </div>
+      <div class="dvir-pt-who-card dvir-pt-fadein">
+        <div class="dvir-pt-who-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <p>אתה רוצה ללמוד להשתמש נכון יותר בשפת הגוף שלך.</p>
+      </div>
+      <div class="dvir-pt-who-card dvir-pt-fadein dvir-pt-delay-1">
+        <div class="dvir-pt-who-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <p>אתה רוצה ליצור רושם ראשוני טוב יותר ולפתוח פגישות בביטחון.</p>
+      </div>
+      <div class="dvir-pt-who-card dvir-pt-fadein dvir-pt-delay-2">
+        <div class="dvir-pt-who-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <p>אתה רוצה לבנות ביטחון דרך תרגול, התנסות ונוכחות.</p>
+      </div>
+      <div class="dvir-pt-who-card dvir-pt-fadein">
+        <div class="dvir-pt-who-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <p>אתה צריך קבוצה קטנה, גבולות ברורים ומרחב בטוח כדי לצאת מאזור הנוחות.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem">
+      <p class="dvir-pt-lead" style="color:#555;margin-bottom:1.5rem">התהליך מתאים לאנשים שרוצים להתחיל תנועה חדשה, אבל צריכים מקום מדויק, קטן ומוחזק כדי לעשות את זה נכון.</p>
+      <a href="#contact" class="dvir-pt-btn-primary">אני רוצה לבדוק התאמה</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+   11. ABOUT — על דביר
+   ============================================================ -->
+<section class="dvir-pt-section-dark" id="about">
+  <div class="dvir-pt-container">
+    <div class="dvir-pt-about-grid">
+      <div class="dvir-pt-about-photo"
+           style="background-image:url('https://winschool.w-in.co.il/wp-content/uploads/2026/06/dvir-profile_-1.png');order:-1">
+      </div>
+      <div class="dvir-pt-about-content">
+        <span class="dvir-pt-label" style="background:rgba(62,153,167,.25);color:var(--dvir-teal-light)">על דביר פרץ</span>
+        <h2 class="dvir-pt-h2">אני דביר פרץ. העבודה שלי היא לקחת את הכוח של האדם ואת הכוח של הקבוצה, ולחבר ביניהם לרגע שבו משהו מתחיל לזוז.</h2>
+        <p class="dvir-pt-about-sub">מאמנטור, מנחה קבוצות, שחקן, מגשר ומפתח שיטת ווין</p>
+        <p class="dvir-pt-lead dvir-pt-lead-white">מעל 18 שנה אני עובד עם אנשים וקבוצות: ילדים, נוער, הורים, צוותי חינוך, מנהלים, מסגרות רווחה, רשויות, ארגונים ואנשים שנמצאים בצמתי חיים.</p>
+        <p class="dvir-pt-lead dvir-pt-lead-white" style="margin-top:.8rem">העבודה שלי היא לראות איפה אדם נתקע, אבל גם לראות איזה כוח יש לו ואיך אפשר להפעיל אותו.</p>
+        <p class="dvir-pt-lead dvir-pt-lead-white" style="margin-top:.8rem">לאורך השנים ליווה מעל 350,000 משתתפים, מאות ארגונים, מנהלים, צוותים, בוגרים וקהילות בית ספר.</p>
+        <div class="dvir-pt-cred-list">
+          <div class="dvir-pt-cred-item">
+            <div class="dvir-pt-cred-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <span>מעל 18 שנות ניסיון</span>
+          </div>
+          <div class="dvir-pt-cred-item">
+            <div class="dvir-pt-cred-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+            <span>350,000+ משתתפים</span>
+          </div>
+          <div class="dvir-pt-cred-item">
+            <div class="dvir-pt-cred-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+            <span>שיטת ווין</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+   12. TESTIMONIALS — עדויות
+   ============================================================ -->
+<section class="dvir-pt-section" id="testimonials">
+  <div class="dvir-pt-container">
+    <div class="dvir-pt-section-header">
+      <span class="dvir-pt-label">מה אנשים אומרים</span>
+      <h2 class="dvir-pt-h2">מה אנשים סביב התהליך ראו קורה</h2>
+      <p class="dvir-pt-lead" style="max-width:600px;margin:1rem auto 0">
+        העדויות כאן נועדו להראות מה חוזר שוב ושוב בתהליכים של דביר: ביטחון, מסוגלות, נוכחות ושינוי.
+      </p>
+    </div>
+    <div class="dvir-pt-quote-grid">
+      <div class="dvir-pt-quote dvir-pt-fadein">
+        <p>הקבוצה מנתה עולים חדשים ממדינות שונות, ערבים וותיקים, ויחד הם הצליחו ליצור שפה משותפת שאפשרה להם להסיר את המסכות ולהביא את עצמם לתוך התהליך.</p>
+        <div class="dvir-pt-quote-author">
+          <strong>דורית הינדי</strong>
+          <span>עיריית תל אביב יפו</span>
+        </div>
+      </div>
+      <div class="dvir-pt-quote dvir-pt-fadein dvir-pt-delay-1">
+        <p>השיח החברתי והעמידה מול מצלמה מאפשרים חשיפה באופן אחר וזהו כלי עוצמתי.</p>
+        <div class="dvir-pt-quote-author">
+          <strong>גלית סיטון זערור</strong>
+          <span>אגף לשירותים חברתיים ר״ג</span>
+        </div>
+      </div>
+      <div class="dvir-pt-quote dvir-pt-fadein dvir-pt-delay-2">
+        <p>המסוגלות העצמית שלהם שמתעצמת עם הזמן.</p>
+        <div class="dvir-pt-quote-author">
+          <strong>נוגה גור</strong>
+          <span>רכזת הנחלה ראשל״צ</span>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:2.5rem;text-align:center">
+      <img src="https://winschool.w-in.co.il/wp-content/uploads/2025/05/6-1.png"
+           alt="עדויות מהשטח" style="border-radius:var(--dvir-radius);max-height:380px;width:100%;object-fit:cover;margin:0 auto;box-shadow:var(--dvir-shadow)">
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+   13. PROFESSIONAL BOUNDARY — גבול מקצועי
+   ============================================================ -->
+<section class="dvir-pt-section-alt dvir-pt-section" id="boundary">
+  <div class="dvir-pt-container">
+    <div class="dvir-pt-section-header">
+      <h2 class="dvir-pt-h2">מה זה כן, ומה זה לא</h2>
+    </div>
+    <div class="dvir-pt-boundary-box">
+      <h4>יוצרים ניצחונות בדרך הוא תהליך מנטורינג אישי וקבוצתי בשיטת ווין.</h4>
+      <p>הוא אינו טיפול נפשי, אבחון, הכשרה מקצועית, קורס קורות חיים, קבוצת תמיכה, מסלול השמה, ואינו מבטיח עבודה. הוא אינו מחליף עובד שיקום, פסיכולוג, עובד סוציאלי, רופא או גורם מקצועי אחר.</p>
+      <p style="margin-top:.8rem">הוא <strong>כן</strong> תהליך אישי וקבוצתי שמחזק מסוגלות, ביטחון עצמי, שפת גוף, נוכחות, תקשורת, הצגה עצמית ויכולת פעולה הדרגתית לקראת השלב הבא.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+   14. FAQ — שאלות ותשובות
+   ============================================================ -->
+<section class="dvir-pt-section" id="faq">
+  <div class="dvir-pt-container">
+    <div class="dvir-pt-section-header">
+      <span class="dvir-pt-label">שאלות נפוצות</span>
+      <h2 class="dvir-pt-h2">שאלות ותשובות</h2>
+    </div>
+    <div class="dvir-pt-accordion" style="max-width:760px;margin:0 auto">
+
+      <div class="dvir-pt-acc-item">
+        <button class="dvir-pt-acc-trigger">
+          <span>האם אני חייב לדבר מול קבוצה?</span>
+          <span class="dvir-pt-acc-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="dvir-pt-acc-content"><div class="dvir-pt-acc-inner">לא בבת אחת ולא בכוח. התהליך בנוי בהדרגה. כל משתתף מוזמן לקחת חלק בקצב שמאפשר לו להרגיש בטוח, אבל כן מתוך כוונה להתרחב ולעשות צעדים קטנים קדימה.</div></div>
+      </div>
+
+      <div class="dvir-pt-acc-item">
+        <button class="dvir-pt-acc-trigger">
+          <span>האם אני חייב לחשוף את הסיפור האישי שלי?</span>
+          <span class="dvir-pt-acc-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="dvir-pt-acc-content"><div class="dvir-pt-acc-inner">לא. אין חובה לחשוף את הסיפור האישי או מה שעברת. העבודה כאן היא לא על חשיפה לשם חשיפה, אלא על בניית כוח, נוכחות ויכולת פעולה.</div></div>
+      </div>
+
+      <div class="dvir-pt-acc-item">
+        <button class="dvir-pt-acc-trigger">
+          <span>האם חייבים להצטלם?</span>
+          <span class="dvir-pt-acc-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="dvir-pt-acc-content"><div class="dvir-pt-acc-inner">לא. המצלמה נכנסת בהדרגה ובהסכמה. סרטון אישי הוא אפשרות בלבד ולפי התאמה.</div></div>
+      </div>
+
+      <div class="dvir-pt-acc-item">
+        <button class="dvir-pt-acc-trigger">
+          <span>מה ההבדל בין המסלול המלא למסלול המורחב?</span>
+          <span class="dvir-pt-acc-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="dvir-pt-acc-content"><div class="dvir-pt-acc-inner">המסלול המלא כולל את כל רכיבי התהליך: קבוצה, מנטורינג אישי, קורות חיים, הצגה עצמית, סימולציות ומשימות. המסלול המורחב כולל בנוסף שתי פגישות אישיות של 90 דקות לעבודה עמוקה יותר על תוצרים כמו סרטון הצגה עצמית, הכנה לראיון, קורות חיים או פנייה יזומה.</div></div>
+      </div>
+
+      <div class="dvir-pt-acc-item">
+        <button class="dvir-pt-acc-trigger">
+          <span>האם המחיר כולל כיבוד?</span>
+          <span class="dvir-pt-acc-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="dvir-pt-acc-content"><div class="dvir-pt-acc-inner">כן. בכל מפגש קבוצתי מוגשים שתייה חמה, שתייה קרה, עוגיות וכיבוד קל, כחלק מאווירה נעימה ומכבדת שמאפשרת להגיע, לנשום ולהיות נוכחים בתהליך.</div></div>
+      </div>
+
+      <div class="dvir-pt-acc-item">
+        <button class="dvir-pt-acc-trigger">
+          <span>האם חייבים לבחור מסלול מראש?</span>
+          <span class="dvir-pt-acc-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="dvir-pt-acc-content"><div class="dvir-pt-acc-inner">לא בהכרח. בשיחת ההתאמה בודקים יחד מה הצורך שלך, מה המטרה האישית שלך, ואיזה עומק ליווי מתאים לך.</div></div>
+      </div>
+
+      <div class="dvir-pt-acc-item">
+        <button class="dvir-pt-acc-trigger">
+          <span>האם זה טיפול?</span>
+          <span class="dvir-pt-acc-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="dvir-pt-acc-content"><div class="dvir-pt-acc-inner">לא. זה תהליך מנטורינג אישי וקבוצתי. הוא יכול להיות משמעותי ועמוק, אבל הוא אינו טיפול נפשי ואינו מחליף גורם מקצועי טיפולי, רפואי או שיקומי.</div></div>
+      </div>
+
+      <div class="dvir-pt-acc-item">
+        <button class="dvir-pt-acc-trigger">
+          <span>האם זה מתאים גם אם אין לי ביטחון עצמי?</span>
+          <span class="dvir-pt-acc-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="dvir-pt-acc-content"><div class="dvir-pt-acc-inner">כן, בתנאי שיש נכונות להתחיל. לא צריך להגיע בטוח. צריך להגיע מוכן לתרגל, לקבל שיקוף ולעשות צעדים קטנים.</div></div>
+      </div>
+
+      <div class="dvir-pt-acc-item">
+        <button class="dvir-pt-acc-trigger">
+          <span>האם התוכנית מבטיחה עבודה?</span>
+          <span class="dvir-pt-acc-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="dvir-pt-acc-content"><div class="dvir-pt-acc-inner">לא. התוכנית אינה מבטיחה עבודה או השמה. היא מחזקת מוכנות, ביטחון, נוכחות, תקשורת ויכולת פעולה לקראת השלב הבא.</div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+   JAVASCRIPT
+   ============================================================ -->
+<script>
+(function(){
+  /* NAV scroll */
+  var nav = document.getElementById('dvir-nav');
+  function onScroll(){
+    if(nav){
+      if(window.scrollY > 60){ nav.classList.add('scrolled'); }
+      else { nav.classList.remove('scrolled'); }
+    }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  /* Fade-in on scroll */
+  var fadeEls = document.querySelectorAll('.dvir-pt-fadein');
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('visible'); }
+    });
+  }, {threshold:.12});
+  fadeEls.forEach(function(el){ io.observe(el); });
+
+  /* Accordion */
+  var btns = document.querySelectorAll('.dvir-pt-acc-trigger');
+  btns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var item = btn.closest('.dvir-pt-acc-item');
+      var content = item.querySelector('.dvir-pt-acc-content');
+      var isOpen = item.classList.contains('open');
+      /* close all */
+      document.querySelectorAll('.dvir-pt-acc-item').forEach(function(i){
+        i.classList.remove('open');
+        var c = i.querySelector('.dvir-pt-acc-content');
+        if(c) c.classList.remove('open');
+      });
+      if(!isOpen){
+        item.classList.add('open');
+        content.classList.add('open');
+      }
+    });
+  });
+})();
+
+function submitForm(){
+  var name = document.getElementById('fullname').value.trim();
+  var phone = document.getElementById('phone').value.trim();
+  var consent = document.getElementById('consent').checked;
+  if(!name || !phone){ alert('יש למלא שם ומספר טלפון'); return; }
+  if(!consent){ alert('יש לאשר יצירת קשר'); return; }
+  document.getElementById('form-fields').style.display = 'none';
+  document.getElementById('form-success').style.display = 'block';
+}
+</script>
+</body>
+</html>
