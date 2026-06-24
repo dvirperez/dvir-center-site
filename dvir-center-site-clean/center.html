@@ -485,9 +485,64 @@
         grid-template-columns: repeat(3, 1fr);
       }
     }
+
+    /* ============================================================
+       NAV
+       ============================================================ */
+    .dvir-nav {
+      position: fixed; top: 0; right: 0; left: 0; z-index: 300;
+      padding: .8rem 0;
+      transition: background .35s, box-shadow .35s;
+    }
+    .dvir-nav.scrolled {
+      background: rgba(10,10,10,.96);
+      box-shadow: 0 2px 20px rgba(0,0,0,.25);
+    }
+    .dvir-nav-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .dvir-nav-logo img { height: 36px; width: auto; }
+    .dvir-nav-links {
+      display: flex; gap: .4rem; align-items: center;
+    }
+    .dvir-nav-links a {
+      padding: .35rem .9rem; border-radius: 50px;
+      font-size: .82rem; font-weight: 700; font-family: 'Assistant', sans-serif;
+      color: rgba(255,255,255,.82); text-decoration: none;
+      transition: color .2s, background .2s;
+    }
+    .dvir-nav-links a:hover { color: #fff; background: rgba(255,255,255,.1); }
+    .dvir-nav-links a.active { color: #fff; }
+    .dvir-nav-cta a {
+      padding: .35rem 1rem; border-radius: 50px;
+      font-size: .82rem; font-weight: 800; font-family: 'Assistant', sans-serif;
+      background: var(--dvir-teal); color: #fff; text-decoration: none;
+      transition: background .2s, transform .15s;
+    }
+    .dvir-nav-cta a:hover { background: var(--dvir-teal-dark); transform: translateY(-1px); }
+    @media (max-width: 600px) { .dvir-nav-links { display: none; } }
   </style>
 </head>
 <body>
+
+<nav class="dvir-nav" id="dvir-nav">
+  <div class="dvir-nav-inner">
+    <div class="dvir-nav-logo">
+      <a href="center.html">
+        <img src="https://winschool.w-in.co.il/wp-content/uploads/2026/06/Dvir-logo-BW.png" alt="דביר פרץ">
+      </a>
+    </div>
+    <div class="dvir-nav-links">
+      <a href="center.html" class="active">עמוד הבית</a>
+      <a href="summer.html">תוכנית קיץ לילדים</a>
+      <a href="landing.html">יוצרים ניצחונות בדרך</a>
+    </div>
+    <div class="dvir-nav-cta">
+      <a href="https://wa.me/972507467467?text=שלום%20דביר%2C%20ראיתי%20את%20האתר%20ורוצה%20לשמוע%20פרטים">דברו איתי</a>
+    </div>
+  </div>
+</nav>
 
   <!-- HERO -->
   <section class="dvir-center-hero">
@@ -680,6 +735,15 @@
     </div>
   </section>
   <!-- center-10-cta end -->
+
+<script>
+  var nav = document.getElementById('dvir-nav');
+  window.addEventListener('scroll', function() {
+    if (nav) {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    }
+  });
+</script>
 
 </body>
 </html>
