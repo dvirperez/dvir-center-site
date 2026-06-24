@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>דביר פרץ | אנשים יוצרים ניצחונות</title>
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dvir-teal: #3e99a7;
+      --dvir-teal-dark: #2d7a87;
+      --dvir-teal-light: #e8f4f6;
+      --dvir-black: #0f0f0f;
+      --dvir-white: #ffffff;
+      --dvir-gray-light: #f4f8f9;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Assistant', sans-serif;
+      background: var(--dvir-black);
+      color: var(--dvir-white);
+      direction: rtl;
+      text-align: right;
+    }
+
+    /* ===== HERO ===== */
+    .dvir-center-hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 0 1.25rem;
+    }
+
+    /* Video background */
+    .dvir-center-hero__video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    /* Dark overlay */
+    .dvir-center-hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(15, 15, 15, 0.62);
+      z-index: 1;
+    }
+
+    /* Content wrapper */
+    .dvir-center-hero__content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 720px;
+      text-align: center;
+    }
+
+    /* Logo */
+    .dvir-center-hero__logo {
+      width: 120px;
+      height: auto;
+      opacity: 0;
+      transform: translateY(-16px);
+      animation: dvir-fadeDown 0.8s ease forwards 0.1s;
+    }
+
+    /* Headline */
+    .dvir-center-hero__headline {
+      font-size: clamp(1.55rem, 5vw, 2.6rem);
+      font-weight: 800;
+      line-height: 1.35;
+      color: var(--dvir-white);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: dvir-fadeUp 0.8s ease forwards 0.3s;
+    }
+
+    /* Sub-headline */
+    .dvir-center-hero__sub {
+      font-size: clamp(0.95rem, 2.8vw, 1.15rem);
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.78);
+      line-height: 1.6;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: dvir-fadeUp 0.8s ease forwards 0.5s;
+    }
+
+    /* CTA row */
+    .dvir-center-hero__ctas {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      width: 100%;
+      max-width: 360px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: dvir-fadeUp 0.8s ease forwards 0.7s;
+    }
+
+    .dvir-center-btn {
+      display: inline-block;
+      width: 100%;
+      padding: 0.9rem 1.5rem;
+      border-radius: 8px;
+      font-family: 'Assistant', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      text-decoration: none;
+      text-align: center;
+      cursor: pointer;
+      border: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .dvir-center-btn--primary {
+      background: var(--dvir-teal);
+      color: var(--dvir-white);
+    }
+
+    .dvir-center-btn--primary:hover {
+      background: var(--dvir-teal-dark);
+      transform: translateY(-2px);
+    }
+
+    .dvir-center-btn--outline {
+      background: transparent;
+      color: var(--dvir-white);
+      border: 2px solid rgba(255, 255, 255, 0.7);
+    }
+
+    .dvir-center-btn--outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+    }
+
+    /* Animations */
+    @keyframes dvir-fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes dvir-fadeDown {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ===== DESKTOP ===== */
+    @media (min-width: 640px) {
+      .dvir-center-hero__logo {
+        width: 150px;
+      }
+
+      .dvir-center-hero__ctas {
+        flex-direction: row;
+        justify-content: center;
+        max-width: 520px;
+      }
+
+      .dvir-center-btn {
+        width: auto;
+        min-width: 200px;
+      }
+    }
+
+    /* ===== PROGRAMS ===== */
+    .dvir-center-programs {
+      background: var(--dvir-gray-light);
+      padding: 4rem 1.25rem;
+      color: var(--dvir-black);
+    }
+
+    .dvir-center-programs__title {
+      font-size: clamp(1.35rem, 4vw, 2rem);
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 2.5rem;
+      color: var(--dvir-black);
+    }
+
+    .dvir-center-programs__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 640px) {
+      .dvir-center-programs__grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .dvir-center-card {
+      background: var(--dvir-white);
+      border-radius: 14px;
+      padding: 2rem 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      box-shadow: 0 2px 16px rgba(62, 153, 167, 0.10);
+      border-top: 4px solid var(--dvir-teal);
+    }
+
+    .dvir-center-card__title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--dvir-black);
+      line-height: 1.3;
+    }
+
+    .dvir-center-card__text {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #333;
+      line-height: 1.65;
+      flex-grow: 1;
+    }
+
+    .dvir-center-card__btn {
+      display: inline-block;
+      padding: 0.8rem 1.4rem;
+      background: var(--dvir-teal);
+      color: var(--dvir-white);
+      border-radius: 8px;
+      font-family: 'Assistant', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      text-align: center;
+      transition: background 0.2s, transform 0.15s;
+      align-self: flex-start;
+      width: 100%;
+    }
+
+    .dvir-center-card__btn:hover {
+      background: var(--dvir-teal-dark);
+      transform: translateY(-2px);
+    }
+
+    /* ===== CENTER PAGE BLOCK B ===== */
+    .dvir-pt-section {
+      padding: 4rem 1.25rem;
+      color: var(--dvir-black);
+      background: var(--dvir-white);
+    }
+
+    .dvir-pt-section--soft {
+      background: var(--dvir-gray-light);
+    }
+
+    .dvir-pt-section--dark {
+      background: var(--dvir-black);
+      color: var(--dvir-white);
+    }
+
+    .dvir-pt-wrap {
+      width: 100%;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .dvir-pt-kicker {
+      display: block;
+      margin-bottom: 0.65rem;
+      color: var(--dvir-teal-dark);
+      font-size: 0.95rem;
+      font-weight: 800;
+    }
+
+    .dvir-pt-section--dark .dvir-pt-kicker {
+      color: var(--dvir-teal-light);
+    }
+
+    .dvir-pt-title {
+      margin-bottom: 1rem;
+      color: inherit;
+      font-size: clamp(1.45rem, 4vw, 2.15rem);
+      font-weight: 800;
+      line-height: 1.3;
+    }
+
+    .dvir-pt-lead {
+      max-width: 760px;
+      color: #333;
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+
+    .dvir-pt-section--dark .dvir-pt-lead {
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .dvir-pt-about__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .dvir-pt-about__text {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .dvir-pt-about__panel {
+      display: grid;
+      gap: 0.8rem;
+      padding: 1.5rem;
+      border-right: 4px solid var(--dvir-teal);
+      background: var(--dvir-gray-light);
+      border-radius: 8px;
+    }
+
+    .dvir-pt-about__item {
+      color: #333;
+      font-size: 1rem;
+      line-height: 1.55;
+    }
+
+    .dvir-pt-proof__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .dvir-pt-proof__item {
+      padding: 1.35rem;
+      background: var(--dvir-white);
+      border-radius: 8px;
+      border-top: 4px solid var(--dvir-teal);
+      box-shadow: 0 2px 14px rgba(62, 153, 167, 0.10);
+    }
+
+    .dvir-pt-proof__number {
+      display: block;
+      margin-bottom: 0.35rem;
+      color: var(--dvir-teal-dark);
+      font-size: 1.45rem;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .dvir-pt-proof__label {
+      color: #333;
+      font-size: 0.98rem;
+      line-height: 1.55;
+    }
+
+    .dvir-pt-gallery__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .dvir-pt-gallery__placeholder {
+      min-height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      background: var(--dvir-teal-light);
+      border: 1px solid rgba(62, 153, 167, 0.28);
+      border-radius: 8px;
+      color: var(--dvir-teal-dark);
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .dvir-pt-faq__list {
+      display: grid;
+      gap: 0.85rem;
+      margin-top: 2rem;
+    }
+
+    .dvir-pt-faq__item {
+      background: var(--dvir-white);
+      border-radius: 8px;
+      border: 1px solid rgba(62, 153, 167, 0.22);
+      overflow: hidden;
+    }
+
+    .dvir-pt-faq__question {
+      cursor: pointer;
+      padding: 1rem 1.15rem;
+      color: var(--dvir-black);
+      font-weight: 800;
+      line-height: 1.4;
+    }
+
+    .dvir-pt-faq__answer {
+      padding: 0 1.15rem 1.15rem;
+      color: #333;
+      font-size: 0.98rem;
+      line-height: 1.65;
+    }
+
+    .dvir-pt-cta {
+      text-align: center;
+    }
+
+    .dvir-pt-cta__actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      width: 100%;
+      max-width: 420px;
+      margin: 2rem auto 0;
+    }
+
+    .dvir-pt-cta__button {
+      display: inline-block;
+      width: 100%;
+      padding: 0.9rem 1.4rem;
+      border-radius: 8px;
+      font-family: 'Assistant', sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+      text-align: center;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .dvir-pt-cta__button--primary {
+      background: var(--dvir-teal);
+      color: var(--dvir-white);
+    }
+
+    .dvir-pt-cta__button--primary:hover {
+      background: var(--dvir-teal-dark);
+      transform: translateY(-2px);
+    }
+
+    .dvir-pt-cta__button--outline {
+      color: var(--dvir-white);
+      border: 2px solid rgba(255, 255, 255, 0.7);
+    }
+
+    .dvir-pt-cta__button--outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+    }
+
+    @media (min-width: 640px) {
+      .dvir-pt-proof__grid,
+      .dvir-pt-gallery__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .dvir-pt-cta__actions {
+        flex-direction: row;
+        max-width: 540px;
+      }
+    }
+
+    @media (min-width: 860px) {
+      .dvir-pt-about__grid {
+        grid-template-columns: 1.35fr 0.85fr;
+      }
+
+      .dvir-pt-proof__grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .dvir-pt-gallery__grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="dvir-center-hero">
+    <video
+      class="dvir-center-hero__video"
+      src="https://winschool.w-in.co.il/wp-content/uploads/2026/05/VID-20200202-WA0009-1.mp4"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+    ></video>
+    <div class="dvir-center-hero__overlay"></div>
+
+    <div class="dvir-center-hero__content">
+      <img
+        class="dvir-center-hero__logo"
+        src="https://winschool.w-in.co.il/wp-content/uploads/2026/06/Dvir-logo-BW.png"
+        alt="דביר פרץ לוגו"
+      >
+      <h1 class="dvir-center-hero__headline">
+        כאן לא רק מדברים על שינוי.<br>כאן מתרגלים אותו.
+      </h1>
+      <p class="dvir-center-hero__sub">
+        מרכז לאימון, התפתחות אישית ותהליכים קבוצתיים · רמת גן
+      </p>
+      <div class="dvir-center-hero__ctas">
+        <a href="#summer" class="dvir-center-btn dvir-center-btn--primary">לתוכנית הקיץ לילדים</a>
+        <a href="#mentoring" class="dvir-center-btn dvir-center-btn--outline">לתוכנית יוצרים ניצחונות בדרך</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMS -->
+  <section class="dvir-center-programs" id="programs">
+    <h2 class="dvir-center-programs__title">התוכניות שפתוחות עכשיו</h2>
+    <div class="dvir-center-programs__grid">
+
+      <div class="dvir-center-card" id="summer">
+        <h3 class="dvir-center-card__title">יוצרים ניצחונות בקיץ</h3>
+        <p class="dvir-center-card__text">
+          שבוע אימון חווייתי לילדים בכיתות ד עד ו. קבוצה של עד 12 משתתפים בלבד. ביטחון עצמי, שפת גוף, נוכחות, הצגה עצמית ועבודה מול קבוצה דרך משחקים, משימות, במה ושיקוף בזמן אמת.
+        </p>
+        <a href="https://wa.me/972507467467?text=שלום%20דביר%2C%20ראיתי%20את%20תוכנית%20הקיץ%20ורוצה%20לשמוע%20פרטים" class="dvir-center-card__btn">לפרטים והרשמה</a>
+      </div>
+
+      <div class="dvir-center-card" id="mentoring">
+        <h3 class="dvir-center-card__title">יוצרים ניצחונות בדרך</h3>
+        <p class="dvir-center-card__text">
+          תהליך מנטורינג אישי וקבוצתי בשיטת WIN לאנשים שרוצים לחזור לפעולה, להתחזק מול אנשים, להתכונן לראיון, פגישה או צעד חדש.
+        </p>
+        <a href="https://wa.me/972507467467?text=שלום%20דביר%2C%20ראיתי%20את%20יוצרים%20ניצחונות%20בדרך%20ורוצה%20שיחת%20התאמה" class="dvir-center-card__btn">לשיחת התאמה</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- center-06-about start -->
+  <section class="dvir-pt-section" id="center-06-about">
+    <div class="dvir-pt-wrap dvir-pt-about__grid">
+      <div class="dvir-pt-about__text">
+        <span class="dvir-pt-kicker">על דביר פרץ</span>
+        <h2 class="dvir-pt-title">עבודה מעשית עם אנשים, קבוצות ותהליכים</h2>
+        <p class="dvir-pt-lead">
+          דביר פרץ מוביל תהליכי אימון, חוויה ופעולה עם ילדים, בני נוער, הורים, צוותי חינוך וארגונים. העבודה משלבת את שיטת WIN, משחקים עוקפי שכל, תרגילי במה, תנועה, משימות קבוצתיות ושיקוף בזמן אמת.
+        </p>
+        <p class="dvir-pt-lead">
+          המטרה פשוטה: ליצור מרחב שבו המשתתפים מתרגלים ביטחון, תקשורת, נוכחות והובלה בתוך קבוצה. לא רק מדברים על שינוי, אלא מתנסים בו בפועל.
+        </p>
+      </div>
+      <div class="dvir-pt-about__panel">
+        <p class="dvir-pt-about__item">שיטת WIN מחברת בין חוויה, גבול, פעולה ושיקוף.</p>
+        <p class="dvir-pt-about__item">המשתתפים מתרגלים מול קבוצה, מקבלים שיקוף ובונים ביטחון בהדרגה.</p>
+        <p class="dvir-pt-about__item">התהליכים מותאמים לילדים, בני נוער, הורים, צוותים וארגונים.</p>
+      </div>
+    </div>
+  </section>
+  <!-- center-06-about end -->
+
+  <!-- center-07-proof start -->
+  <section class="dvir-pt-section dvir-pt-section--soft" id="center-07-proof">
+    <div class="dvir-pt-wrap">
+      <span class="dvir-pt-kicker">אמון וניסיון</span>
+      <h2 class="dvir-pt-title">ניסיון שנבנה בשטח, עם קבוצות אמיתיות</h2>
+      <p class="dvir-pt-lead">
+        העבודה של המרכז נשענת על שנים של מפגשים, תהליכים וקבוצות במסגרות חינוך, רשויות וארגונים.
+      </p>
+      <div class="dvir-pt-proof__grid">
+        <div class="dvir-pt-proof__item">
+          <span class="dvir-pt-proof__number">18+</span>
+          <p class="dvir-pt-proof__label">שנות ניסיון בהובלת תהליכים עם ילדים, בני נוער ומבוגרים.</p>
+        </div>
+        <div class="dvir-pt-proof__item">
+          <span class="dvir-pt-proof__number">מאות</span>
+          <p class="dvir-pt-proof__label">קבוצות ותהליכים שעברו אימון, חוויה, במה ושיקוף.</p>
+        </div>
+        <div class="dvir-pt-proof__item">
+          <span class="dvir-pt-proof__number">אלפים</span>
+          <p class="dvir-pt-proof__label">משתתפים שלקחו חלק בפעילויות, סדנאות ותוכניות.</p>
+        </div>
+        <div class="dvir-pt-proof__item">
+          <span class="dvir-pt-proof__number">בתי ספר</span>
+          <p class="dvir-pt-proof__label">עבודה עם מסגרות חינוך, צוותים ותלמידים בגילאים שונים.</p>
+        </div>
+        <div class="dvir-pt-proof__item">
+          <span class="dvir-pt-proof__number">רשויות וארגונים</span>
+          <p class="dvir-pt-proof__label">תהליכים מותאמים לקבוצות, צוותים ומסגרות מקצועיות.</p>
+        </div>
+        <div class="dvir-pt-proof__item">
+          <span class="dvir-pt-proof__number">גפ"ן</span>
+          <p class="dvir-pt-proof__label">תוכניות מאושרות גפ"ן לעבודה במערכת החינוך.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- center-07-proof end -->
+
+  <!-- center-08-gallery start -->
+  <section class="dvir-pt-section" id="center-08-gallery">
+    <div class="dvir-pt-wrap">
+      <span class="dvir-pt-kicker">רגעים מהשטח</span>
+      <h2 class="dvir-pt-title">גלריית תמונות</h2>
+      <p class="dvir-pt-lead">
+        כאן ישולבו תמונות מתוך מפגשים, תרגילים, עבודה קבוצתית ותהליכים במרכז.
+      </p>
+      <div class="dvir-pt-gallery__grid" aria-label="גלריית תמונות עתידית">
+        <div class="dvir-pt-gallery__placeholder">תמונה עתידית 1</div>
+        <div class="dvir-pt-gallery__placeholder">תמונה עתידית 2</div>
+        <div class="dvir-pt-gallery__placeholder">תמונה עתידית 3</div>
+        <div class="dvir-pt-gallery__placeholder">תמונה עתידית 4</div>
+        <div class="dvir-pt-gallery__placeholder">תמונה עתידית 5</div>
+        <div class="dvir-pt-gallery__placeholder">תמונה עתידית 6</div>
+      </div>
+    </div>
+  </section>
+  <!-- center-08-gallery end -->
+
+  <!-- center-09-faq start -->
+  <section class="dvir-pt-section dvir-pt-section--soft" id="center-09-faq">
+    <div class="dvir-pt-wrap">
+      <span class="dvir-pt-kicker">שאלות נפוצות</span>
+      <h2 class="dvir-pt-title">מה חשוב לדעת לפני שמתחילים</h2>
+      <div class="dvir-pt-faq__list">
+        <details class="dvir-pt-faq__item" open>
+          <summary class="dvir-pt-faq__question">למי התהליכים במרכז מתאימים?</summary>
+          <p class="dvir-pt-faq__answer">לילדים, בני נוער, הורים, צוותי חינוך, קבוצות וארגונים שרוצים לתרגל ביטחון, תקשורת, נוכחות והובלה דרך עבודה קבוצתית וחווייתית.</p>
+        </details>
+        <details class="dvir-pt-faq__item">
+          <summary class="dvir-pt-faq__question">מה קורה בפועל במפגש?</summary>
+          <p class="dvir-pt-faq__answer">המפגש כולל משחקים עוקפי שכל, משימות קבוצתיות, תרגילי במה, שיקוף ושיחה קצרה שמחברת את החוויה לחיים עצמם.</p>
+        </details>
+        <details class="dvir-pt-faq__item">
+          <summary class="dvir-pt-faq__question">האם צריך ניסיון קודם?</summary>
+          <p class="dvir-pt-faq__answer">לא. העבודה מותאמת לקבוצה ולמשתתפים. כל אחד נכנס בקצב שמתאים לו, תוך שמירה על גבול ברור ומרחב מכבד.</p>
+        </details>
+        <details class="dvir-pt-faq__item">
+          <summary class="dvir-pt-faq__question">איך שיטת WIN משתלבת בתהליך?</summary>
+          <p class="dvir-pt-faq__answer">שיטת WIN מחברת בין התנסות, פעולה ושיקוף. המשתתפים לא מקבלים הרצאה על שינוי, אלא מתרגלים אותו דרך מצבים אמיתיים בתוך הקבוצה.</p>
+        </details>
+        <details class="dvir-pt-faq__item">
+          <summary class="dvir-pt-faq__question">האם יש התאמה למסגרות חינוך?</summary>
+          <p class="dvir-pt-faq__answer">כן. קיימת עבודה עם בתי ספר, צוותי חינוך ורשויות, כולל תוכניות מאושרות גפ"ן והתאמה לגיל, לקבוצה ולמטרת המסגרת.</p>
+        </details>
+        <details class="dvir-pt-faq__item">
+          <summary class="dvir-pt-faq__question">איך מתחילים?</summary>
+          <p class="dvir-pt-faq__answer">משאירים פרטים או שולחים הודעת וואטסאפ. לאחר מכן בודקים יחד מה הצורך, למי התהליך מיועד ומה המסגרת המתאימה.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+  <!-- center-09-faq end -->
+
+  <!-- center-10-cta start -->
+  <section class="dvir-pt-section dvir-pt-section--dark" id="center-10-cta">
+    <div class="dvir-pt-wrap dvir-pt-cta">
+      <span class="dvir-pt-kicker">אנשים יוצרים ניצחונות</span>
+      <h2 class="dvir-pt-title">רוצים גם ליצור ניצחונות בדרך?</h2>
+      <p class="dvir-pt-lead">
+        דברו איתי ונבדוק יחד איזה תהליך מתאים לכם, לקבוצה או למסגרת שלכם.
+      </p>
+      <div class="dvir-pt-cta__actions">
+        <a class="dvir-pt-cta__button dvir-pt-cta__button--primary" href="https://wa.me/972507467467?text=שלום%20דביר%2C%20ראיתי%20את%20אתר%20המרכז%20ורוצה%20לשמוע%20פרטים">דברו איתי בוואטסאפ</a>
+        <a class="dvir-pt-cta__button dvir-pt-cta__button--outline" href="tel:+972507467467">יצירת קשר</a>
+      </div>
+    </div>
+  </section>
+  <!-- center-10-cta end -->
+
+</body>
+</html>
