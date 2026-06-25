@@ -507,18 +507,28 @@
     }
 
     .dvir-s-faq__question {
+      width: 100%;
+      text-align: right;
+      background: none;
+      border: none;
       cursor: pointer;
       padding: 1rem 1.15rem;
-      color: var(--dvir-black);
       font-weight: 800;
-      line-height: 1.4;
+      font-size: 1rem;
+      font-family: 'Assistant', sans-serif;
+      color: var(--dvir-black);
     }
 
     .dvir-s-faq__answer {
+      display: none;
       padding: 0 1.15rem 1.15rem;
       color: #333;
       font-size: 0.98rem;
       line-height: 1.65;
+    }
+
+    .dvir-s-faq__item.open .dvir-s-faq__answer {
+      display: block;
     }
 
     /* ===== CTA ===== */
@@ -905,30 +915,30 @@
       <span class="dvir-s-kicker">שאלות של הורים</span>
       <h2 class="dvir-s-title">מה חשוב לדעת לפני שנרשמים</h2>
       <div class="dvir-s-faq__list">
-        <details class="dvir-s-faq__item" open>
-          <summary class="dvir-s-faq__question">לאיזה גיל התוכנית מתאימה?</summary>
-          <p class="dvir-s-faq__answer">לילדים בכיתות ד–ו. הקבוצה קטנה, עד 12 ילדים, כדי שכל ילד יקבל מקום, זמן ושיקוף אישי.</p>
-        </details>
-        <details class="dvir-s-faq__item">
-          <summary class="dvir-s-faq__question">הילד שלי ביישן — זה מתאים לו?</summary>
-          <p class="dvir-s-faq__answer">דווקא כן. התהליך בנוי בהדרגה, עם גבול ברור ומרחב מכבד. אף ילד לא נדחף — כל אחד נכנס בקצב שלו, והקבוצה הקטנה עוזרת.</p>
-        </details>
-        <details class="dvir-s-faq__item">
-          <summary class="dvir-s-faq__question">מה ההבדל בין מסלול א למסלול ב?</summary>
-          <p class="dvir-s-faq__answer">מסלול א מתמקד בנוכחות, הצגה עצמית וביטחון מול קבוצה. מסלול ב מוסיף עבודה מול מצלמה ויוצר סרטון קבוצתי. מסלול ב פתוח בעיקר למשתתפי א — חדשים אחרי שיחת התאמה.</p>
-        </details>
-        <details class="dvir-s-faq__item">
-          <summary class="dvir-s-faq__question">איפה זה מתקיים ומה השעות?</summary>
-          <p class="dvir-s-faq__answer">במרכז ברמת גן (שלם 3, בית זילברמינץ, קומה 4). ארבעה מפגשים, ימים א–ד, בין 18:00 ל-19:05.</p>
-        </details>
-        <details class="dvir-s-faq__item">
-          <summary class="dvir-s-faq__question">יש אפשרות לתשלומים?</summary>
-          <p class="dvir-s-faq__answer">כן. אפשר לפצל ל-2 תשלומים ללא ריבית בשני המסלולים.</p>
-        </details>
-        <details class="dvir-s-faq__item">
-          <summary class="dvir-s-faq__question">איך נרשמים?</summary>
-          <p class="dvir-s-faq__answer">שולחים הודעת וואטסאפ עם שם הילד והכיתה, ונחזור אליכם עם כל הפרטים וסגירת ההרשמה.</p>
-        </details>
+        <div class="dvir-s-faq__item open">
+          <button class="dvir-s-faq__question">לאיזה גיל התוכנית מתאימה?</button>
+          <div class="dvir-s-faq__answer">לילדים בכיתות ד–ו. הקבוצה קטנה, עד 12 ילדים, כדי שכל ילד יקבל מקום, זמן ושיקוף אישי.</div>
+        </div>
+        <div class="dvir-s-faq__item">
+          <button class="dvir-s-faq__question">הילד שלי ביישן — זה מתאים לו?</button>
+          <div class="dvir-s-faq__answer">דווקא כן. התהליך בנוי בהדרגה, עם גבול ברור ומרחב מכבד. אף ילד לא נדחף — כל אחד נכנס בקצב שלו, והקבוצה הקטנה עוזרת.</div>
+        </div>
+        <div class="dvir-s-faq__item">
+          <button class="dvir-s-faq__question">מה ההבדל בין מסלול א למסלול ב?</button>
+          <div class="dvir-s-faq__answer">מסלול א מתמקד בנוכחות, הצגה עצמית וביטחון מול קבוצה. מסלול ב מוסיף עבודה מול מצלמה ויוצר סרטון קבוצתי. מסלול ב פתוח בעיקר למשתתפי א — חדשים אחרי שיחת התאמה.</div>
+        </div>
+        <div class="dvir-s-faq__item">
+          <button class="dvir-s-faq__question">איפה זה מתקיים ומה השעות?</button>
+          <div class="dvir-s-faq__answer">במרכז ברמת גן (שלם 3, בית זילברמינץ, קומה 4). ארבעה מפגשים, ימים א–ד, בין 18:00 ל-19:05.</div>
+        </div>
+        <div class="dvir-s-faq__item">
+          <button class="dvir-s-faq__question">יש אפשרות לתשלומים?</button>
+          <div class="dvir-s-faq__answer">כן. אפשר לפצל ל-2 תשלומים ללא ריבית בשני המסלולים.</div>
+        </div>
+        <div class="dvir-s-faq__item">
+          <button class="dvir-s-faq__question">איך נרשמים?</button>
+          <div class="dvir-s-faq__answer">שולחים הודעת וואטסאפ עם שם הילד והכיתה, ונחזור אליכם עם כל הפרטים וסגירת ההרשמה.</div>
+        </div>
       </div>
     </div>
   </section>
@@ -970,6 +980,11 @@
   var nav = document.getElementById('dvir-nav');
   window.addEventListener('scroll', function() {
     if (nav) nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+  document.querySelectorAll('.dvir-s-faq__question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      this.closest('.dvir-s-faq__item').classList.toggle('open');
+    });
   });
 </script>
 
