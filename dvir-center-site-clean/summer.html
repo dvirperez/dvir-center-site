@@ -506,17 +506,18 @@
       overflow: hidden;
     }
 
+    .dvir-faq-toggle { display: none; }
+
     .dvir-s-faq__question {
-      width: 100%;
-      text-align: right;
-      background: none;
-      border: none;
       cursor: pointer;
+      display: block;
       padding: 1rem 1.15rem;
       font-weight: 800;
       font-size: 1rem;
       font-family: 'Assistant', sans-serif;
       color: var(--dvir-black);
+      width: 100%;
+      text-align: right;
     }
 
     .dvir-s-faq__answer {
@@ -527,7 +528,7 @@
       line-height: 1.65;
     }
 
-    .dvir-s-faq__item.open .dvir-s-faq__answer {
+    .dvir-faq-toggle:checked + .dvir-s-faq__question + .dvir-s-faq__answer {
       display: block;
     }
 
@@ -915,28 +916,34 @@
       <span class="dvir-s-kicker">שאלות של הורים</span>
       <h2 class="dvir-s-title">מה חשוב לדעת לפני שנרשמים</h2>
       <div class="dvir-s-faq__list">
-        <div class="dvir-s-faq__item open">
-          <button class="dvir-s-faq__question">לאיזה גיל התוכנית מתאימה?</button>
+        <div class="dvir-s-faq__item">
+          <input type="checkbox" id="faq1" class="dvir-faq-toggle">
+          <label for="faq1" class="dvir-s-faq__question">לאיזה גיל התוכנית מתאימה?</label>
           <div class="dvir-s-faq__answer">לילדים בכיתות ד–ו. הקבוצה קטנה, עד 12 ילדים, כדי שכל ילד יקבל מקום, זמן ושיקוף אישי.</div>
         </div>
         <div class="dvir-s-faq__item">
-          <button class="dvir-s-faq__question">הילד שלי ביישן — זה מתאים לו?</button>
+          <input type="checkbox" id="faq2" class="dvir-faq-toggle">
+          <label for="faq2" class="dvir-s-faq__question">הילד שלי ביישן — זה מתאים לו?</label>
           <div class="dvir-s-faq__answer">דווקא כן. התהליך בנוי בהדרגה, עם גבול ברור ומרחב מכבד. אף ילד לא נדחף — כל אחד נכנס בקצב שלו, והקבוצה הקטנה עוזרת.</div>
         </div>
         <div class="dvir-s-faq__item">
-          <button class="dvir-s-faq__question">מה ההבדל בין מסלול א למסלול ב?</button>
+          <input type="checkbox" id="faq3" class="dvir-faq-toggle">
+          <label for="faq3" class="dvir-s-faq__question">מה ההבדל בין מסלול א למסלול ב?</label>
           <div class="dvir-s-faq__answer">מסלול א מתמקד בנוכחות, הצגה עצמית וביטחון מול קבוצה. מסלול ב מוסיף עבודה מול מצלמה ויוצר סרטון קבוצתי. מסלול ב פתוח בעיקר למשתתפי א — חדשים אחרי שיחת התאמה.</div>
         </div>
         <div class="dvir-s-faq__item">
-          <button class="dvir-s-faq__question">איפה זה מתקיים ומה השעות?</button>
+          <input type="checkbox" id="faq4" class="dvir-faq-toggle">
+          <label for="faq4" class="dvir-s-faq__question">איפה זה מתקיים ומה השעות?</label>
           <div class="dvir-s-faq__answer">במרכז ברמת גן (שלם 3, בית זילברמינץ, קומה 4). ארבעה מפגשים, ימים א–ד, בין 18:00 ל-19:05.</div>
         </div>
         <div class="dvir-s-faq__item">
-          <button class="dvir-s-faq__question">יש אפשרות לתשלומים?</button>
+          <input type="checkbox" id="faq5" class="dvir-faq-toggle">
+          <label for="faq5" class="dvir-s-faq__question">יש אפשרות לתשלומים?</label>
           <div class="dvir-s-faq__answer">כן. אפשר לפצל ל-2 תשלומים ללא ריבית בשני המסלולים.</div>
         </div>
         <div class="dvir-s-faq__item">
-          <button class="dvir-s-faq__question">איך נרשמים?</button>
+          <input type="checkbox" id="faq6" class="dvir-faq-toggle">
+          <label for="faq6" class="dvir-s-faq__question">איך נרשמים?</label>
           <div class="dvir-s-faq__answer">שולחים הודעת וואטסאפ עם שם הילד והכיתה, ונחזור אליכם עם כל הפרטים וסגירת ההרשמה.</div>
         </div>
       </div>
@@ -980,11 +987,6 @@
   var nav = document.getElementById('dvir-nav');
   window.addEventListener('scroll', function() {
     if (nav) nav.classList.toggle('scrolled', window.scrollY > 60);
-  });
-  document.querySelectorAll('.dvir-s-faq__question').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      this.closest('.dvir-s-faq__item').classList.toggle('open');
-    });
   });
 </script>
 

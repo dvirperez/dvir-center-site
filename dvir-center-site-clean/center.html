@@ -400,17 +400,18 @@
       overflow: hidden;
     }
 
+    .dvir-faq-toggle { display: none; }
+
     .dvir-pt-faq__question {
-      width: 100%;
-      text-align: right;
-      background: none;
-      border: none;
       cursor: pointer;
+      display: block;
       padding: 1rem 1.15rem;
       font-weight: 800;
       font-size: 1rem;
       font-family: 'Assistant', sans-serif;
       color: var(--dvir-black);
+      width: 100%;
+      text-align: right;
     }
 
     .dvir-pt-faq__answer {
@@ -421,7 +422,7 @@
       line-height: 1.65;
     }
 
-    .dvir-pt-faq__item.open .dvir-pt-faq__answer {
+    .dvir-faq-toggle:checked + .dvir-pt-faq__question + .dvir-pt-faq__answer {
       display: block;
     }
 
@@ -697,28 +698,34 @@
       <span class="dvir-pt-kicker">שאלות נפוצות</span>
       <h2 class="dvir-pt-title">מה חשוב לדעת לפני שמתחילים</h2>
       <div class="dvir-pt-faq__list">
-        <div class="dvir-pt-faq__item open">
-          <button class="dvir-pt-faq__question">למי התהליכים במרכז מתאימים?</button>
+        <div class="dvir-pt-faq__item">
+          <input type="checkbox" id="faq1" class="dvir-faq-toggle">
+          <label for="faq1" class="dvir-pt-faq__question">למי התהליכים במרכז מתאימים?</label>
           <div class="dvir-pt-faq__answer">לילדים, בני נוער, הורים, צוותי חינוך, קבוצות וארגונים שרוצים לתרגל ביטחון, תקשורת, נוכחות והובלה דרך עבודה קבוצתית וחווייתית.</div>
         </div>
         <div class="dvir-pt-faq__item">
-          <button class="dvir-pt-faq__question">מה קורה בפועל במפגש?</button>
+          <input type="checkbox" id="faq2" class="dvir-faq-toggle">
+          <label for="faq2" class="dvir-pt-faq__question">מה קורה בפועל במפגש?</label>
           <div class="dvir-pt-faq__answer">המפגש כולל משחקים עוקפי שכל, משימות קבוצתיות, תרגילי במה, שיקוף ושיחה קצרה שמחברת את החוויה לחיים עצמם.</div>
         </div>
         <div class="dvir-pt-faq__item">
-          <button class="dvir-pt-faq__question">האם צריך ניסיון קודם?</button>
+          <input type="checkbox" id="faq3" class="dvir-faq-toggle">
+          <label for="faq3" class="dvir-pt-faq__question">האם צריך ניסיון קודם?</label>
           <div class="dvir-pt-faq__answer">לא. העבודה מותאמת לקבוצה ולמשתתפים. כל אחד נכנס בקצב שמתאים לו, תוך שמירה על גבול ברור ומרחב מכבד.</div>
         </div>
         <div class="dvir-pt-faq__item">
-          <button class="dvir-pt-faq__question">איך שיטת WIN משתלבת בתהליך?</button>
+          <input type="checkbox" id="faq4" class="dvir-faq-toggle">
+          <label for="faq4" class="dvir-pt-faq__question">איך שיטת WIN משתלבת בתהליך?</label>
           <div class="dvir-pt-faq__answer">שיטת WIN מחברת בין התנסות, פעולה ושיקוף. המשתתפים לא מקבלים הרצאה על שינוי, אלא מתרגלים אותו דרך מצבים אמיתיים בתוך הקבוצה.</div>
         </div>
         <div class="dvir-pt-faq__item">
-          <button class="dvir-pt-faq__question">האם יש התאמה למסגרות חינוך?</button>
+          <input type="checkbox" id="faq5" class="dvir-faq-toggle">
+          <label for="faq5" class="dvir-pt-faq__question">האם יש התאמה למסגרות חינוך?</label>
           <div class="dvir-pt-faq__answer">כן. קיימת עבודה עם בתי ספר, צוותי חינוך ורשויות, כולל תוכניות מאושרות גפ"ן והתאמה לגיל, לקבוצה ולמטרת המסגרת.</div>
         </div>
         <div class="dvir-pt-faq__item">
-          <button class="dvir-pt-faq__question">איך מתחילים?</button>
+          <input type="checkbox" id="faq6" class="dvir-faq-toggle">
+          <label for="faq6" class="dvir-pt-faq__question">איך מתחילים?</label>
           <div class="dvir-pt-faq__answer">משאירים פרטים או שולחים הודעת וואטסאפ. לאחר מכן בודקים יחד מה הצורך, למי התהליך מיועד ומה המסגרת המתאימה.</div>
         </div>
       </div>
@@ -748,11 +755,6 @@
     if (nav) {
       nav.classList.toggle('scrolled', window.scrollY > 60);
     }
-  });
-  document.querySelectorAll('.dvir-pt-faq__question').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      this.closest('.dvir-pt-faq__item').classList.toggle('open');
-    });
   });
 </script>
 
